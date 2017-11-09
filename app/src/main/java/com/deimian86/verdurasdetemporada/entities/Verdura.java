@@ -8,7 +8,7 @@ import android.arch.persistence.room.PrimaryKey;
 public class Verdura {
 
     @PrimaryKey(autoGenerate = true)
-    private int uid;
+    private int id;
 
     @ColumnInfo(name = "nombre")
     private String nombre;
@@ -16,13 +16,12 @@ public class Verdura {
     @ColumnInfo(name = "foto")
     private String foto;
 
-
-    public int getUid() {
-        return uid;
+    public int getId() {
+        return id;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
+    public void setId(int uid) {
+        this.id = uid;
     }
 
     public String getNombre() {
@@ -43,6 +42,10 @@ public class Verdura {
 
     @Override
     public String toString() {
-        return "Verdura{ id=" + uid + ", nombre='" + nombre + "'}'";
+        return "Verdura{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", foto='" + foto + '\'' +
+                '}';
     }
 }

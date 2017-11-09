@@ -15,8 +15,8 @@
             android:padding="16dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:id="@+id/verdura_foto"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
@@ -26,8 +26,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/verdura_nombre"
+                android:layout_centerVertical="true"
                 android:layout_toEndOf="@+id/verdura_foto"
-                android:layout_alignParentTop="true"
                 android:textSize="30sp" />
 
         </RelativeLayout>

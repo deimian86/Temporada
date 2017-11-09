@@ -13,7 +13,7 @@ public interface VerduraDao {
     @Query("SELECT * FROM verdura")
     LiveData<List<Verdura>> getAll();
 
-    @Query("SELECT * FROM verdura WHERE uid IN (:ids)")
+    @Query("SELECT * FROM verdura WHERE id IN (:ids)")
     LiveData<List<Verdura>> findAllByIds(int[] ids);
 
     @Query("SELECT * FROM verdura WHERE nombre LIKE :nombre LIMIT 1")

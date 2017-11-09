@@ -1,0 +1,366 @@
+[
+    {
+      "id": "1",
+      "nombre": "Acelga",
+      "foto": "img_01",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "2",
+      "nombre": "Ajo Puerro",
+      "foto": "img_02",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "3",
+      "nombre": "Alcachofa",
+      "foto": "img_03",
+      "meses": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "4",
+      "nombre": "Berenjena",
+      "foto": "img_04",
+      "meses": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "5",
+      "nombre": "Berzas",
+      "foto": "img_05",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "6",
+      "nombre": "Brócoli",
+      "foto": "img_06",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "7",
+      "nombre": "Calabacín",
+      "foto": "img_07",
+      "meses": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "8",
+      "nombre": "Cebolleta",
+      "foto": "img_08",
+      "meses": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "9",
+      "nombre": "Coles de Bruselas",
+      "foto": "img_09",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "10",
+      "nombre": "Coliflor",
+      "foto": "img_10",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "11",
+      "nombre": "Escarola",
+      "foto": "img_11",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "12",
+      "nombre": "Espinaca",
+      "foto": "img_12",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "13",
+      "nombre": "Fréjoles",
+      "foto": "img_13",
+      "meses": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "14",
+      "nombre": "Guisantes",
+      "foto": "img_14",
+      "meses": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "15",
+      "nombre": "Habas de mayo",
+      "foto": "img_15",
+      "meses": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "16",
+      "nombre": "Lechuga",
+      "foto": "img_16",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "17",
+      "nombre": "Lombarda",
+      "foto": "img_17",
+      "meses": [
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "18",
+      "nombre": "Nabos",
+      "foto": "img_18",
+      "meses": [
+        1,
+        2,
+        3,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "19",
+      "nombre": "Pepino",
+      "foto": "img_19",
+      "meses": [
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "20",
+      "nombre": "Pimiento",
+      "foto": "img_20",
+      "meses": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "id": "21",
+      "nombre": "Rabanitos",
+      "foto": "img_21",
+      "meses": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "22",
+      "nombre": "Remolacha",
+      "foto": "img_22",
+      "meses": [
+        1,
+        2,
+        3,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "23",
+      "nombre": "Repollo",
+      "foto": "img_23",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "24",
+      "nombre": "Tomate",
+      "foto": "img_24",
+      "meses": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "id": "25",
+      "nombre": "Zanahoria",
+      "foto": "img_25",
+      "meses": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+]

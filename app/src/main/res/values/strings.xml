@@ -2,32 +2,4 @@
     <string name="app_name">Verduras de Temporada</string>
     <string name="action_settings">Settings</string>
 
-    <string-array name="verduras_array">
-        <item>Acelga</item>
-        <item>Ajo Puerro</item>
-        <item>Alcachofa</item>
-        <item>Berenjena</item>
-        <item>Berzas</item>
-        <item>Brócoli</item>
-        <item>Calabacín</item>
-        <item>Cebolleta</item>
-        <item>Coles de Bruselas</item>
-        <item>Coliflor</item>
-        <item>Escarola</item>
-        <item>Espinaca</item>
-        <item>Fréjoles</item>
-        <item>Guisantes</item>
-        <item>Habas de mayo</item>
-        <item>Lechuga</item>
-        <item>Lombarda</item>
-        <item>Nabos</item>
-        <item>Pepino</item>
-        <item>Pimiento</item>
-        <item>Rabanitos</item>
-        <item>Remolacha</item>
-        <item>Repollo</item>
-        <item>Tomate</item>
-        <item>Zanahoria</item>
-    </string-array>
-
 </resources>

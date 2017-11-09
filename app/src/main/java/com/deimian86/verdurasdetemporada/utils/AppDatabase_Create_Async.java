@@ -1,15 +1,27 @@
 package com.deimian86.verdurasdetemporada.utils;
 
-import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.deimian86.verdurasdetemporada.R;
 import com.deimian86.verdurasdetemporada.entities.Verdura;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
-public class AppDatabase_Create_Async extends AsyncTask<Void, Void, Void> {
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringWriter;
+import java.io.Writer;
+import java.lang.reflect.Type;
+import java.util.List;
 
+public class AppDatabase_Create_Async extends AsyncTask<Void, Boolean, Boolean> {
+
+    private String tag = this.getClass().getName();
     private AppDatabase db;
     private Context context;
 
@@ -19,33 +31,39 @@ public class AppDatabase_Create_Async extends AsyncTask<Void, Void, Void> {
     }
 
     @Override
-    protected Void doInBackground(Void... voids) {
+    protected Boolean doInBackground(Void... voids) {
 
-        Resources res = context.getResources();
-        String[] verdurasNombres = res.getStringArray(R.array.verduras_array);
+        String json = rawJSONtoString();
+        Gson gson = new Gson();
+        Type listType = new TypeToken<List<Verdura>>(){}.getType();
+        List<Verdura> verdurasList = (List<Verdura>)  gson.fromJson(json, listType);
 
-        for(String s : verdurasNombres) {
-            Verdura v = new Verdura();
-            v.setNombre(s);
+        for(Verdura v : verdurasList) {
+            Log.d(tag, v.toString());
+            db.verduraDao().insertAll(v);
         }
 
-        Verdura v1 = new Verdura();
-        v1.setNombre("Acelga");
-
-        Verdura v2 = new Verdura();
-        v2.setNombre("Tomate");
-
-        Verdura v3 = new Verdura();
-        v3.setNombre("Brócoli");
-
-        db.verduraDao().insertAll(v1, v2, v3);
-
-        return null;
+        return true;
     }
 
-    @Override
-    protected void onPostExecute(Void aVoid) {
-        super.onPostExecute(aVoid);
+    private String rawJSONtoString(){
+        try {
+            InputStream is = context.getResources().openRawResource(R.raw.data);
+            Writer writer = new StringWriter();
+            char[] buffer = new char[1024];
+            try {
+                Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+                int n;
+                while ((n = reader.read(buffer)) != -1) {
+                    writer.write(buffer, 0, n);
+                }
+            } finally {
+                is.close();
+            }
+            return writer.toString();
+        } catch (Exception e) {
+            return null;
+        }
     }
 
 }
