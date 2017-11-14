@@ -21,12 +21,14 @@ import android.widget.Toast;
 
 import com.deimian86.verdurasdetemporada.R;
 import com.deimian86.verdurasdetemporada.adapters.VerduraAdapter;
+import com.deimian86.verdurasdetemporada.entities.Mes;
 import com.deimian86.verdurasdetemporada.entities.Verdura;
 import com.deimian86.verdurasdetemporada.utils.AppDatabase;
 import com.deimian86.verdurasdetemporada.utils.AppDatabase_Create_Async;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Texto de prueba", Toast.LENGTH_SHORT).show();
+                Mes mes = new Mes(new Random().nextInt(11) + 1);
+                Toast.makeText(getApplicationContext(), mes.toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
