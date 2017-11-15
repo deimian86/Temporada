@@ -38,15 +38,15 @@
                         android:id="@+id/verdura_nombre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/txt_prueba_verdura"
-                        android:paddingStart="8dp"
                         android:paddingEnd="8dp"
+                        android:paddingStart="8dp"
+                        android:text="@string/txt_prueba_verdura"
                         android:textSize="30sp" />
 
-                    <include
+                    <com.deimian86.verdurasdetemporada.utils.CustomYearView
+                        android:id="@+id/lyt_meses"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        layout="@layout/view_months" />
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 

@@ -16,6 +16,7 @@ import android.view.ViewGroup.LayoutParams;
 import com.deimian86.verdurasdetemporada.R;
 import com.deimian86.verdurasdetemporada.entities.Mes;
 import com.deimian86.verdurasdetemporada.entities.Verdura;
+import com.deimian86.verdurasdetemporada.utils.CustomYearView;
 import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
@@ -37,7 +38,7 @@ public class VerduraAdapter extends RecyclerView.Adapter<VerduraAdapter.VerduraV
         CardView cv;
         TextView verduraNombre;
         ImageView verduraFoto;
-        LinearLayout mesesLayout;
+        CustomYearView mesesLayout;
 
         private VerduraViewHolder(View itemView) {
             super(itemView);
@@ -80,17 +81,6 @@ public class VerduraAdapter extends RecyclerView.Adapter<VerduraAdapter.VerduraV
 
         // LISTADO DE MESES //
 
-        int monthCount = 1;
-        for (int i = 0; i < holder.mesesLayout.getChildCount(); i++) {
-            View v = holder.mesesLayout.getChildAt(i);
-
-            Log.d("DEBUG", "name = " + context.getResources().getResourceName(v.getId()));
-
-            if (v instanceof TextView) {
-                ((TextView)v).setText(new Mes(monthCount++).getNombreCortoFormateado());
-                ((TextView)v).setTextColor(context.getResources().getColor(android.R.color.holo_orange_dark));
-            }
-        }
 
         // CLICK LISTENER //
 
@@ -100,7 +90,6 @@ public class VerduraAdapter extends RecyclerView.Adapter<VerduraAdapter.VerduraV
                 Toast.makeText(context, data.get(position).getNombre(), Toast.LENGTH_SHORT).show();
             }
         });
-
 
     }
 
