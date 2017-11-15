@@ -3,6 +3,7 @@ package com.deimian86.verdurasdetemporada.adapters;
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,8 @@ import com.deimian86.verdurasdetemporada.R;
 import com.deimian86.verdurasdetemporada.entities.Mes;
 import com.deimian86.verdurasdetemporada.entities.Verdura;
 import com.squareup.picasso.Picasso;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -77,22 +80,16 @@ public class VerduraAdapter extends RecyclerView.Adapter<VerduraAdapter.VerduraV
 
         // LISTADO DE MESES //
 
-        LayoutParams lparams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        for (int i = 1; i < 12; i++) {
+        int monthCount = 1;
+        for (int i = 0; i < holder.mesesLayout.getChildCount(); i++) {
+            View v = holder.mesesLayout.getChildAt(i);
 
-            TextView txtMes = new TextView(context);
-            txtMes.setLayoutParams(lparams);
+            Log.d("DEBUG", "name = " + context.getResources().getResourceName(v.getId()));
 
-            // PADDING A CADA TEXTVIEW DE FORMA PROGRAMATICA
-            float scale = context.getResources().getDisplayMetrics().density;
-            int padding = (int) (5 * scale + 0.5f);
-            txtMes.setPadding(padding , padding, padding, padding);
-
-            // FORMATO DEL TEXTO
-            txtMes.setText(new Mes(i).getNombreCortoFormateado());
-            txtMes.setTextColor(context.getResources().getColor(android.R.color.black));
-            txtMes.setTextSize(12f);
-            holder.mesesLayout.addView(txtMes);
+            if (v instanceof TextView) {
+                ((TextView)v).setText(new Mes(monthCount++).getNombreCortoFormateado());
+                ((TextView)v).setTextColor(context.getResources().getColor(android.R.color.holo_orange_dark));
+            }
         }
 
         // CLICK LISTENER //

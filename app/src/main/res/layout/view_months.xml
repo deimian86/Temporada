@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lyt_meses"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_mes_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"
+            android:paddingStart="3dp"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:text="@string/txt_prueba_abreviatura" />
+
+        <TextView
+            android:id="@+id/txt_mes_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"
+            android:paddingStart="3dp"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:text="@string/txt_prueba_abreviatura" />
+
+        <TextView
+            android:id="@+id/txt_mes_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"
+            android:paddingStart="3dp"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:text="@string/txt_prueba_abreviatura" />
+
+        <TextView
+            android:id="@+id/txt_mes_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"
+            android:paddingStart="3dp"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:text="@string/txt_prueba_abreviatura" />
+
+        <TextView
+            android:id="@+id/txt_mes_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"
+            android:paddingStart="3dp"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:text="@string/txt_prueba_abreviatura" />
+
+        <TextView
+            android:id="@+id/txt_mes_06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"
+            android:paddingStart="3dp"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:text="@string/txt_prueba_abreviatura" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_mes_07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"
+            android:paddingStart="3dp"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:text="@string/txt_prueba_abreviatura" />
+
+        <TextView
+            android:id="@+id/txt_mes_08"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"
+            android:paddingStart="3dp"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:text="@string/txt_prueba_abreviatura" />
+
+        <TextView
+            android:id="@+id/txt_mes_09"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"
+            android:paddingStart="3dp"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:text="@string/txt_prueba_abreviatura" />
+
+        <TextView
+            android:id="@+id/txt_mes_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"
+            android:paddingStart="3dp"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:text="@string/txt_prueba_abreviatura" />
+
+        <TextView
+            android:id="@+id/txt_mes_11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"
+            android:paddingStart="3dp"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:text="@string/txt_prueba_abreviatura" />
+
+        <TextView
+            android:id="@+id/txt_mes_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="3dp"
+            android:paddingStart="3dp"
+            android:textSize="12sp"
+            android:textAllCaps="true"
+            android:text="@string/txt_prueba_abreviatura" />
+
+    </LinearLayout>
+
+</LinearLayout>
