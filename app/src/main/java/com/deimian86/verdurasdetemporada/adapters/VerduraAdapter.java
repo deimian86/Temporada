@@ -3,24 +3,16 @@ package com.deimian86.verdurasdetemporada.adapters;
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.view.ViewGroup.LayoutParams;
-
 import com.deimian86.verdurasdetemporada.R;
-import com.deimian86.verdurasdetemporada.entities.Mes;
 import com.deimian86.verdurasdetemporada.entities.Verdura;
 import com.deimian86.verdurasdetemporada.utils.CustomYearView;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 public class VerduraAdapter extends RecyclerView.Adapter<VerduraAdapter.VerduraViewHolder>{
@@ -74,7 +66,7 @@ public class VerduraAdapter extends RecyclerView.Adapter<VerduraAdapter.VerduraV
         Picasso.with(context)
                 .load(resId)
                 .fit()
-                .centerCrop()
+                .centerInside()
                 .placeholder(R.drawable.img_00)
                 .error(R.drawable.img_00)
                 .into(holder.verduraFoto);
