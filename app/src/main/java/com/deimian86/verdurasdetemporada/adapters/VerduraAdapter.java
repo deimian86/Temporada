@@ -73,6 +73,8 @@ public class VerduraAdapter extends RecyclerView.Adapter<VerduraAdapter.VerduraV
 
         // LISTADO DE MESES //
 
+        int[] intArray = new int[] {4,5,6,7,8};
+        holder.mesesLayout.marcarMeses(intArray);
 
         // CLICK LISTENER //
 
