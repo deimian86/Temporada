@@ -2,7 +2,13 @@ package com.deimian86.verdurasdetemporada.entities;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.Relation;
+import android.arch.persistence.room.TypeConverters;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Verdura {
@@ -15,6 +21,9 @@ public class Verdura {
 
     @ColumnInfo(name = "foto")
     private String foto;
+
+    @Ignore
+    private List<Integer> meses = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -38,6 +47,14 @@ public class Verdura {
 
     public void setFoto(String foto) {
         this.foto = foto;
+    }
+
+    public List<Integer> getMeses() {
+        return meses;
+    }
+
+    public void setMeses(List<Integer> meses) {
+        this.meses = meses;
     }
 
     @Override

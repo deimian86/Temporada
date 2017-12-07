@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.deimian86.verdurasdetemporada.R;
 import com.deimian86.verdurasdetemporada.entities.Verdura;
+import com.deimian86.verdurasdetemporada.entities.VerduraMes;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -41,6 +42,11 @@ public class AppDatabase_Create_Async extends AsyncTask<Void, Boolean, Boolean> 
         for(Verdura v : verdurasList) {
             Log.d(tag, v.toString());
             db.verduraDao().insertAll(v);
+
+            for (int i : v.getMeses()) {
+                db.verduraMesDao().insertAll(new VerduraMes(v.getId(), i));
+            }
+
         }
 
         return true;

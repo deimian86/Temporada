@@ -23,6 +23,7 @@ import com.deimian86.verdurasdetemporada.R;
 import com.deimian86.verdurasdetemporada.adapters.VerduraAdapter;
 import com.deimian86.verdurasdetemporada.entities.Mes;
 import com.deimian86.verdurasdetemporada.entities.Verdura;
+import com.deimian86.verdurasdetemporada.entities.VerduraMes;
 import com.deimian86.verdurasdetemporada.utils.AppDatabase;
 import com.deimian86.verdurasdetemporada.utils.AppDatabase_Create_Async;
 
@@ -75,28 +76,42 @@ public class MainActivity extends AppCompatActivity {
         rv.setLayoutManager(llm);
         adapter = new VerduraAdapter(getApplicationContext(), verduras);
         rv.setAdapter(adapter);
-        loadData();
+        loadVerduras();
 
     }
 
-    private void loadData(){
-
-        Log.d(tag, "loadData()");
-
+    private void loadVerduras(){
         LiveData<List<Verdura>> verdurasLiveList = db.verduraDao().getAll();
-
-        // ADAPTER //
-
         verdurasLiveList.observe(MainActivity.this, new Observer<List<Verdura>>() {
             @Override
             public void onChanged(@Nullable List<Verdura> verdurasTemp) {
-                Log.d(tag, "Observer<List<Verdura>> onChanged() " + verdurasTemp.size());
-                verduras.clear();
-                verduras.addAll(verdurasTemp);
-                adapter.notifyDataSetChanged();
+                loadMesesPorVerdura(verdurasTemp);
             }
         });
 
+    }
+
+    private void loadMesesPorVerdura(final List<Verdura> verdurasTemp){
+
+        for (final Verdura v: verdurasTemp) {
+            LiveData<List<VerduraMes>> verdurasMesLiveList = db.verduraMesDao().findMesesPorVerdura(v.getId());
+            verdurasMesLiveList.observe(MainActivity.this, new Observer<List<VerduraMes>>() {
+                @Override
+                public void onChanged(@Nullable List<VerduraMes> verdurasMesesTemp) {
+                    for (VerduraMes vm: verdurasMesesTemp) {
+                        Log.d(tag, "v = " + v.getNombre() + " vm = "  + vm.getMesId());
+                        v.getMeses().add(vm.getMesId());
+                    }
+                    refreshAdapter(verdurasTemp);
+                }
+            });
+        }
+    }
+
+    private void refreshAdapter(List<Verdura> verdurasTemp){
+        verduras.clear();
+        verduras.addAll(verdurasTemp);
+        adapter.notifyDataSetChanged();
     }
 
     @Override

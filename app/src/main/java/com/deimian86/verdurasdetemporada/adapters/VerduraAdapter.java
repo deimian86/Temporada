@@ -1,8 +1,10 @@
 package com.deimian86.verdurasdetemporada.adapters;
 
+import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.deimian86.verdurasdetemporada.R;
 import com.deimian86.verdurasdetemporada.entities.Verdura;
+import com.deimian86.verdurasdetemporada.utils.AppDatabase;
 import com.deimian86.verdurasdetemporada.utils.CustomYearView;
 import com.squareup.picasso.Picasso;
 import java.util.List;
@@ -73,8 +76,7 @@ public class VerduraAdapter extends RecyclerView.Adapter<VerduraAdapter.VerduraV
 
         // LISTADO DE MESES //
 
-        int[] intArray = new int[] {4,5,6,7,8};
-        holder.mesesLayout.marcarMeses(intArray);
+        holder.mesesLayout.marcarMeses(data.get(position).getMeses());
 
         // CLICK LISTENER //
 

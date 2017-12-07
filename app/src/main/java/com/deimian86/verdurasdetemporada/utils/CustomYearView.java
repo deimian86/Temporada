@@ -14,6 +14,7 @@ import com.deimian86.verdurasdetemporada.R;
 import com.deimian86.verdurasdetemporada.entities.Mes;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomYearView extends FrameLayout {
 
@@ -110,9 +111,9 @@ public class CustomYearView extends FrameLayout {
         super.onLayout(changed, left, top, right, bottom);
     }
 
-    public void marcarMeses(int[] meses){
+    public void marcarMeses(List<Integer> meses){
         for(Integer i : meses){
-            txtMeses.get(i).setTextColor(getResources().getColor(android.R.color.holo_orange_dark));
+            txtMeses.get(i-1).setTextColor(getResources().getColor(android.R.color.holo_orange_dark));
         }
     }
 
