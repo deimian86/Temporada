@@ -3,6 +3,7 @@
       "id": "1",
       "nombre": "Acelga",
       "foto": "img_01",
+      "fondo": "background_01",
       "meses": [
         1,
         2,
@@ -22,6 +23,7 @@
       "id": "2",
       "nombre": "Ajo Puerro",
       "foto": "img_02",
+      "fondo": "background_02",
       "meses": [
         1,
         2,
@@ -41,6 +43,7 @@
       "id": "3",
       "nombre": "Alcachofa",
       "foto": "img_03",
+      "fondo": "background_03",
       "meses": [
         4,
         5,
@@ -52,6 +55,7 @@
       "id": "4",
       "nombre": "Berenjena",
       "foto": "img_04",
+      "fondo": "background_04",
       "meses": [
         6,
         7,
@@ -64,6 +68,7 @@
       "id": "5",
       "nombre": "Berzas",
       "foto": "img_05",
+      "fondo": "background_05",
       "meses": [
         1,
         2,
@@ -83,6 +88,7 @@
       "id": "6",
       "nombre": "Brócoli",
       "foto": "img_06",
+      "fondo": "background_06",
       "meses": [
         1,
         2,
@@ -99,6 +105,7 @@
       "id": "7",
       "nombre": "Calabacín",
       "foto": "img_07",
+      "fondo": "background_07",
       "meses": [
         6,
         7,
@@ -111,6 +118,7 @@
       "id": "8",
       "nombre": "Cebolleta",
       "foto": "img_08",
+      "fondo": "background_08",
       "meses": [
         4,
         5,
@@ -121,6 +129,7 @@
       "id": "9",
       "nombre": "Coles de Bruselas",
       "foto": "img_09",
+      "fondo": "background_09",
       "meses": [
         1,
         2,
@@ -134,6 +143,7 @@
       "id": "10",
       "nombre": "Coliflor",
       "foto": "img_10",
+      "fondo": "background_10",
       "meses": [
         1,
         2,
@@ -153,6 +163,7 @@
       "id": "11",
       "nombre": "Escarola",
       "foto": "img_11",
+      "fondo": "background_11",
       "meses": [
         1,
         2,
@@ -167,6 +178,7 @@
       "id": "12",
       "nombre": "Espinaca",
       "foto": "img_12",
+      "fondo": "background_12",
       "meses": [
         1,
         2,
@@ -183,6 +195,7 @@
       "id": "13",
       "nombre": "Fréjoles",
       "foto": "img_13",
+      "fondo": "background_13",
       "meses": [
         6,
         7,
@@ -195,6 +208,7 @@
       "id": "14",
       "nombre": "Guisantes",
       "foto": "img_14",
+      "fondo": "background_14",
       "meses": [
         3,
         4,
@@ -208,6 +222,7 @@
       "id": "15",
       "nombre": "Habas de mayo",
       "foto": "img_15",
+      "fondo": "background_15",
       "meses": [
         4,
         5,
@@ -218,6 +233,7 @@
       "id": "16",
       "nombre": "Lechuga",
       "foto": "img_16",
+      "fondo": "background_16",
       "meses": [
         1,
         2,
@@ -237,6 +253,7 @@
       "id": "17",
       "nombre": "Lombarda",
       "foto": "img_17",
+      "fondo": "background_17",
       "meses": [
         3,
         4,
@@ -253,6 +270,7 @@
       "id": "18",
       "nombre": "Nabos",
       "foto": "img_18",
+      "fondo": "background_18",
       "meses": [
         1,
         2,
@@ -265,6 +283,7 @@
       "id": "19",
       "nombre": "Pepino",
       "foto": "img_19",
+      "fondo": "background_19",
       "meses": [
         7,
         8,
@@ -276,6 +295,7 @@
       "id": "20",
       "nombre": "Pimiento",
       "foto": "img_20",
+      "fondo": "background_20",
       "meses": [
         6,
         7,
@@ -289,6 +309,7 @@
       "id": "21",
       "nombre": "Rabanitos",
       "foto": "img_21",
+      "fondo": "background_21",
       "meses": [
         4,
         5,
@@ -303,6 +324,7 @@
       "id": "22",
       "nombre": "Remolacha",
       "foto": "img_22",
+      "fondo": "background_22",
       "meses": [
         1,
         2,
@@ -319,6 +341,7 @@
       "id": "23",
       "nombre": "Repollo",
       "foto": "img_23",
+      "fondo": "background_23",
       "meses": [
         1,
         2,
@@ -338,6 +361,7 @@
       "id": "24",
       "nombre": "Tomate",
       "foto": "img_24",
+      "fondo": "background_24",
       "meses": [
         7,
         8,
@@ -350,6 +374,7 @@
       "id": "25",
       "nombre": "Zanahoria",
       "foto": "img_25",
+      "fondo": "background_25",
       "meses": [
         1,
         2,

@@ -2,12 +2,7 @@ package com.deimian86.verdurasdetemporada.utils;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.deimian86.verdurasdetemporada.R;
@@ -112,8 +107,19 @@ public class CustomYearView extends FrameLayout {
     }
 
     public void marcarMeses(List<Integer> meses){
+        desmarcarMeses();
         for(Integer i : meses){
-            txtMeses.get(i-1).setTextColor(getResources().getColor(android.R.color.holo_orange_dark));
+            txtMeses.get(i-1).setTextColor(getResources().getColor(android.R.color.white));
+            txtMeses.get(i-1).setBackgroundResource(R.drawable.layout_rounded_active);
+            txtMeses.get(i-1).setAlpha(1.0f);
+        }
+    }
+
+    private void desmarcarMeses(){
+        for(int i = 0; i < 12; i++){
+            txtMeses.get(i).setTextColor(getResources().getColor(R.color.gris_inactivo_texto));
+            txtMeses.get(i).setBackgroundResource(R.drawable.layout_rounded_unactive);
+            txtMeses.get(i).setAlpha(0.6f);
         }
     }
 

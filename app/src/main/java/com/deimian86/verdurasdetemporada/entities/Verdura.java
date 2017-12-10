@@ -22,6 +22,9 @@ public class Verdura {
     @ColumnInfo(name = "foto")
     private String foto;
 
+    @ColumnInfo(name = "fondo")
+    private String fondo;
+
     @Ignore
     private List<Integer> meses = new ArrayList<>();
 
@@ -52,6 +55,10 @@ public class Verdura {
     public List<Integer> getMeses() {
         return meses;
     }
+
+    public String getFondo() { return fondo; }
+
+    public void setFondo(String fondo) { this.fondo = fondo; }
 
     public void setMeses(List<Integer> meses) {
         this.meses = meses;

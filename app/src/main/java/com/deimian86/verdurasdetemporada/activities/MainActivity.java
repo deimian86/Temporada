@@ -8,28 +8,22 @@ import android.arch.persistence.room.RoomDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
+import android.support.v7.widget.SearchView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
-
 import com.deimian86.verdurasdetemporada.R;
 import com.deimian86.verdurasdetemporada.adapters.VerduraAdapter;
-import com.deimian86.verdurasdetemporada.entities.Mes;
 import com.deimian86.verdurasdetemporada.entities.Verdura;
 import com.deimian86.verdurasdetemporada.entities.VerduraMes;
 import com.deimian86.verdurasdetemporada.utils.AppDatabase;
 import com.deimian86.verdurasdetemporada.utils.AppDatabase_Create_Async;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -57,17 +51,6 @@ public class MainActivity extends AppCompatActivity {
         };
 
         db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "verduras-db").addCallback(rdc).build();
-
-        // FAB //
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Mes mes = new Mes(new Random().nextInt(11) + 1);
-                Toast.makeText(getApplicationContext(), mes.toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
 
         // LISTADO //
 
@@ -117,16 +100,30 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        final MenuItem myActionMenuItem = menu.findItem( R.id.action_search);
+        SearchView searchView = (SearchView) myActionMenuItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Log.d(tag,"onQueryTextSubmit: " + query);
+                adapter.getFilter().filter(query);
+                myActionMenuItem.collapseActionView();
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String s) {
+                Log.d(tag,"SearchOnQueryTextChanged: " + s);
+                adapter.getFilter().filter(s);
+                return false;
+            }
+        });
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
 }
