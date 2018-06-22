@@ -3,6 +3,7 @@ package com.deimian86.verdurasdetemporada.activities;
 import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
@@ -11,9 +12,13 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ImageSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -83,17 +88,19 @@ public class MainActivity extends AppCompatActivity {
         MainActivityPagerAdapter adapter = new MainActivityPagerAdapter(getSupportFragmentManager());
         // Fragment verduras
         VerdurasFragment fragmentVerduras = new VerdurasFragment();
-        adapter.addFragment(fragmentVerduras, getResources().getString(R.string.tab_verduras));
+        adapter.addFragment(fragmentVerduras, getResources().getString(R.string.tab_verduras), R.drawable.ic_vegetable);
         // Fragment Frutas
         FrutasFragment fragmentFrutas = new FrutasFragment();
-        adapter.addFragment(fragmentFrutas, getResources().getString(R.string.tab_frutas));
+        adapter.addFragment(fragmentFrutas, getResources().getString(R.string.tab_frutas), R.drawable.ic_vegetable);
         viewPager.setAdapter(adapter);
     }
 
 
     public class MainActivityPagerAdapter extends FragmentPagerAdapter {
+
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
+        private final List<Integer> mFragmentImageList = new ArrayList<>();
 
         private MainActivityPagerAdapter(FragmentManager manager) {
             super(manager);
@@ -109,15 +116,23 @@ public class MainActivity extends AppCompatActivity {
             return mFragmentList.size();
         }
 
-        private void addFragment(Fragment fragment, String title) {
+        private void addFragment(Fragment fragment, String title, int idDrawableIco) {
             mFragmentList.add(fragment);
             mFragmentTitleList.add(title);
+            mFragmentImageList.add(idDrawableIco);
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return mFragmentTitleList.get(position);
+            Drawable image = ContextCompat.getDrawable(MainActivity.this, mFragmentImageList.get(position));
+            image.setBounds(0, 0, image.getIntrinsicWidth(), image.getIntrinsicHeight());
+            SpannableString sb = new SpannableString(" " + mFragmentTitleList.get(position));
+            ImageSpan imageSpan = new ImageSpan(image);
+            sb.setSpan(imageSpan, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            return sb;
         }
+
+
     }
 
 
