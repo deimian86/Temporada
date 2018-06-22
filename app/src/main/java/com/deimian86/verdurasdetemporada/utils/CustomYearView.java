@@ -14,20 +14,7 @@ import java.util.List;
 public class CustomYearView extends FrameLayout {
 
     private Context mContext;
-
     private ArrayList<TextView> txtMeses = new ArrayList<>();
-    private TextView txtMes01;
-    private TextView txtMes02;
-    private TextView txtMes03;
-    private TextView txtMes04;
-    private TextView txtMes05;
-    private TextView txtMes06;
-    private TextView txtMes07;
-    private TextView txtMes08;
-    private TextView txtMes09;
-    private TextView txtMes10;
-    private TextView txtMes11;
-    private TextView txtMes12;
 
     public CustomYearView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -45,40 +32,40 @@ public class CustomYearView extends FrameLayout {
 
         inflate(mContext, R.layout.view_months, this);
 
-        txtMes01 = findViewById(R.id.txt_mes_01);
+        TextView txtMes01 = findViewById(R.id.txt_mes_01);
         txtMes01.setText(new Mes(Mes.ENERO).getNombreCortoFormateado());
 
-        txtMes02 = findViewById(R.id.txt_mes_02);
+        TextView txtMes02 = findViewById(R.id.txt_mes_02);
         txtMes02.setText(new Mes(Mes.FEBRERO).getNombreCortoFormateado());
 
-        txtMes03 = findViewById(R.id.txt_mes_03);
+        TextView txtMes03 = findViewById(R.id.txt_mes_03);
         txtMes03.setText(new Mes(Mes.MARZO).getNombreCortoFormateado());
 
-        txtMes04 = findViewById(R.id.txt_mes_04);
+        TextView txtMes04 = findViewById(R.id.txt_mes_04);
         txtMes04.setText(new Mes(Mes.ABRIL).getNombreCortoFormateado());
 
-        txtMes05 = findViewById(R.id.txt_mes_05);
+        TextView txtMes05 = findViewById(R.id.txt_mes_05);
         txtMes05.setText(new Mes(Mes.MAYO).getNombreCortoFormateado());
 
-        txtMes06 = findViewById(R.id.txt_mes_06);
+        TextView txtMes06 = findViewById(R.id.txt_mes_06);
         txtMes06.setText(new Mes(Mes.JUNIO).getNombreCortoFormateado());
 
-        txtMes07 = findViewById(R.id.txt_mes_07);
+        TextView txtMes07 = findViewById(R.id.txt_mes_07);
         txtMes07.setText(new Mes(Mes.JULIO).getNombreCortoFormateado());
 
-        txtMes08 = findViewById(R.id.txt_mes_08);
+        TextView txtMes08 = findViewById(R.id.txt_mes_08);
         txtMes08.setText(new Mes(Mes.AGOSTO).getNombreCortoFormateado());
 
-        txtMes09 = findViewById(R.id.txt_mes_09);
+        TextView txtMes09 = findViewById(R.id.txt_mes_09);
         txtMes09.setText(new Mes(Mes.SEPTIEMBRE).getNombreCortoFormateado());
 
-        txtMes10 = findViewById(R.id.txt_mes_10);
+        TextView txtMes10 = findViewById(R.id.txt_mes_10);
         txtMes10.setText(new Mes(Mes.OCTUBRE).getNombreCortoFormateado());
 
-        txtMes11 = findViewById(R.id.txt_mes_11);
+        TextView txtMes11 = findViewById(R.id.txt_mes_11);
         txtMes11.setText(new Mes(Mes.NOVIEMBRE).getNombreCortoFormateado());
 
-        txtMes12 = findViewById(R.id.txt_mes_12);
+        TextView txtMes12 = findViewById(R.id.txt_mes_12);
         txtMes12.setText(new Mes(Mes.DICIEMBRE).getNombreCortoFormateado());
 
         txtMeses.add(txtMes01);
