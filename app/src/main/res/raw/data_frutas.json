@@ -1,0 +1,160 @@
+[
+    {
+      "id": "1",
+      "nombre": "Aguacate",
+      "foto": "img_26",
+      "fondo": "background_26",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "2",
+      "nombre": "Cereza",
+      "foto": "img_27",
+      "fondo": "background_27",
+      "meses": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "3",
+      "nombre": "Ciruela",
+      "foto": "img_28",
+      "fondo": "background_28",
+      "meses": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "id": "4",
+      "nombre": "Fresa - Fresón",
+      "foto": "img_29",
+      "fondo": "background_29",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "5",
+      "nombre": "Kiwi",
+      "foto": "img_30",
+      "fondo": "background_30",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "6",
+      "nombre": "Manzana",
+      "foto": "img_31",
+      "fondo": "background_31",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "7",
+      "nombre": "Melocotón",
+      "foto": "img_32",
+      "fondo": "background_32",
+      "meses": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "8",
+      "nombre": "Naranja",
+      "foto": "img_33",
+      "fondo": "background_33",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "9",
+      "nombre": "Pera",
+      "foto": "img_34",
+      "fondo": "background_34",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "10",
+      "nombre": "Plátano",
+      "foto": "img_35",
+      "fondo": "background_35",
+      "meses": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+]

@@ -18,8 +18,15 @@
             android:layout_height="?attr/actionBarSize"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed"
+            app:tabGravity="fill"/>
+
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/fragment_content" />
+    <include layout="@layout/activity_main_content" />
 
 </android.support.design.widget.CoordinatorLayout>

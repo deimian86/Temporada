@@ -1,11 +1,12 @@
 package com.deimian86.verdurasdetemporada.utils;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.util.Log;
 
 import com.deimian86.verdurasdetemporada.R;
+import com.deimian86.verdurasdetemporada.entities.Fruta;
+import com.deimian86.verdurasdetemporada.entities.FrutaMes;
 import com.deimian86.verdurasdetemporada.entities.Verdura;
 import com.deimian86.verdurasdetemporada.entities.VerduraMes;
 import com.google.gson.Gson;
@@ -34,10 +35,13 @@ public class AppDatabase_Create_Async extends AsyncTask<Void, Boolean, Boolean> 
     @Override
     protected Boolean doInBackground(Void... voids) {
 
-        String json = rawJSONtoString();
         Gson gson = new Gson();
-        Type listType = new TypeToken<List<Verdura>>(){}.getType();
-        List<Verdura> verdurasList = (List<Verdura>)  gson.fromJson(json, listType);
+
+        // Cargando verduras en la base de datos
+
+        String jsonVerduras = rawJSONtoString(R.raw.data_verduras);
+        Type listTypeVerduras = new TypeToken<List<Verdura>>(){}.getType();
+        List<Verdura> verdurasList = gson.fromJson(jsonVerduras, listTypeVerduras);
 
         for(Verdura v : verdurasList) {
             Log.d(tag, v.toString());
@@ -49,12 +53,28 @@ public class AppDatabase_Create_Async extends AsyncTask<Void, Boolean, Boolean> 
 
         }
 
+        // Cargando frutas en la base de datos
+
+        String jsonFrutas = rawJSONtoString(R.raw.data_frutas);
+        Type listTypeFrutas = new TypeToken<List<Fruta>>(){}.getType();
+        List<Fruta> frutasList = gson.fromJson(jsonFrutas, listTypeFrutas);
+
+        for(Fruta f : frutasList) {
+            Log.d(tag, f.toString());
+            db.frutaDao().insertAll(f);
+
+            for (int i : f.getMeses()) {
+                db.frutaMesDao().insertAll(new FrutaMes(f.getId(), i));
+            }
+
+        }
+
         return true;
     }
 
-    private String rawJSONtoString(){
+    private String rawJSONtoString(int id){
         try {
-            InputStream is = context.getResources().openRawResource(R.raw.data);
+            InputStream is = context.getResources().openRawResource(id);
             Writer writer = new StringWriter();
             char[] buffer = new char[1024];
             try {
