@@ -1,160 +1,607 @@
 [
-    {
-      "id": "1",
-      "nombre": "Aguacate",
-      "foto": "img_26",
-      "fondo": "background_26",
-      "meses": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        10,
-        11,
-        12
-      ]
-    },
-    {
-      "id": "2",
-      "nombre": "Cereza",
-      "foto": "img_27",
-      "fondo": "background_27",
-      "meses": [
-        4,
-        5,
-        6,
-        7,
-        8
-      ]
-    },
-    {
-      "id": "3",
-      "nombre": "Ciruela",
-      "foto": "img_28",
-      "fondo": "background_28",
-      "meses": [
-        5,
-        6,
-        7,
-        8,
-        9
-      ]
-    },
-    {
-      "id": "4",
-      "nombre": "Fresa - Fresón",
-      "foto": "img_29",
-      "fondo": "background_29",
-      "meses": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ]
-    },
-    {
-      "id": "5",
-      "nombre": "Kiwi",
-      "foto": "img_30",
-      "fondo": "background_30",
-      "meses": [
-        1,
-        2,
-        3,
-        4,
-        9,
-        10,
-        11,
-        12
-      ]
-    },
-    {
-      "id": "6",
-      "nombre": "Manzana",
-      "foto": "img_31",
-      "fondo": "background_31",
-      "meses": [
-        1,
-        2,
-        3,
-        4,
-        9,
-        10,
-        11,
-        12
-      ]
-    },
-    {
-      "id": "7",
-      "nombre": "Melocotón",
-      "foto": "img_32",
-      "fondo": "background_32",
-      "meses": [
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ]
-    },
-    {
-      "id": "8",
-      "nombre": "Naranja",
-      "foto": "img_33",
-      "fondo": "background_33",
-      "meses": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        10,
-        11,
-        12
-      ]
-    },
-    {
-      "id": "9",
-      "nombre": "Pera",
-      "foto": "img_34",
-      "fondo": "background_34",
-      "meses": [
-        1,
-        2,
-        3,
-        4,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12
-      ]
-    },
-    {
-      "id": "10",
-      "nombre": "Plátano",
-      "foto": "img_35",
-      "fondo": "background_35",
-      "meses": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12
-      ]
-    }
+  {
+    "id": "1",
+    "nombre": "Aguacate",
+    "foto": "img_f_01",
+    "fondo": "background_f_01",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "2",
+    "nombre": "Albaricoque",
+    "foto": "img_f_02",
+    "fondo": "background_f_02",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "3",
+    "nombre": "Breva",
+    "foto": "img_f_03",
+    "fondo": "background_f_03",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "4",
+    "nombre": "Caqui",
+    "foto": "img_f_04",
+    "fondo": "background_f_04",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "5",
+    "nombre": "Cereza",
+    "foto": "img_f_05",
+    "fondo": "background_f_05",
+    "meses": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "6",
+    "nombre": "Chirimoya",
+    "foto": "img_f_06",
+    "fondo": "background_f_06",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "7",
+    "nombre": "Ciruela",
+    "foto": "img_f_07",
+    "fondo": "background_f_07",
+    "meses": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "8",
+    "nombre": "Frambuesa",
+    "foto": "img_f_08",
+    "fondo": "background_f_08",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "9",
+    "nombre": "Fresa - Fresón",
+    "foto": "img_f_09",
+    "fondo": "background_f_09",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "10",
+    "nombre": "Granada",
+    "foto": "img_f_10",
+    "fondo": "background_f_10",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "11",
+    "nombre": "Higo",
+    "foto": "img_f_11",
+    "fondo": "background_f_11",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "12",
+    "nombre": "Kiwi",
+    "foto": "img_f_12",
+    "fondo": "background_f_12",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "13",
+    "nombre": "Limón",
+    "foto": "img_f_13",
+    "fondo": "background_f_13",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "14",
+    "nombre": "Mandarina",
+    "foto": "img_f_14",
+    "fondo": "background_f_14",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "15",
+    "nombre": "Mango",
+    "foto": "img_f_15",
+    "fondo": "background_f_15",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "16",
+    "nombre": "Manzana",
+    "foto": "img_f_16",
+    "fondo": "background_f_16",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "17",
+    "nombre": "Melocotón",
+    "foto": "img_f_17",
+    "fondo": "background_f_17",
+    "meses": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "18",
+    "nombre": "Melón",
+    "foto": "img_f_18",
+    "fondo": "background_f_18",
+    "meses": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "19",
+    "nombre": "Membrillo",
+    "foto": "img_f_19",
+    "fondo": "background_f_19",
+    "meses": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "20",
+    "nombre": "Naranja",
+    "foto": "img_f_20",
+    "fondo": "background_f_20",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      10,
+      11,
+      12
+    ]
+  },
+  {
+    "id": "21",
+    "nombre": "Nectarina",
+    "foto": "img_f_21",
+    "fondo": "background_f_21",
+    "meses": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "22",
+    "nombre": "Níspero",
+    "foto": "img_f_22",
+    "fondo": "background_f_22",
+    "meses": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "23",
+    "nombre": "Paraguaya",
+    "foto": "img_f_23",
+    "fondo": "background_f_23",
+    "meses": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "24",
+    "nombre": "Pera",
+    "foto": "img_f_24",
+    "fondo": "background_f_24",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "25",
+    "nombre": "Plátano",
+    "foto": "img_f_25",
+    "fondo": "background_f_25",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "26",
+    "nombre": "Pomelo",
+    "foto": "img_f_26",
+    "fondo": "background_f_26",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "27",
+    "nombre": "Sandía",
+    "foto": "img_f_27",
+    "fondo": "background_f_27",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  },
+  {
+    "id": "28",
+    "nombre": "Uva",
+    "foto": "img_f_28",
+    "fondo": "background_f_28",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": [
+      6,
+      7
+    ]
+  }
 ]

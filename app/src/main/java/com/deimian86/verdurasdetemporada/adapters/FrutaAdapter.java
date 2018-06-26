@@ -69,15 +69,16 @@ public class FrutaAdapter extends RecyclerView.Adapter<FrutaAdapter.FrutaViewHol
 
         // FOTO //
 
-        /* int resId = context.getResources().getIdentifier(dataFiltered.get(position).getFondo(), "drawable", context.getPackageName());
-         Picasso.with(context)
-                .load(resId)
-                .fit()
-                .centerCrop()
-                .placeholder(android.R.color.white)
-                .error(android.R.color.white)
-                .into(holder.verduraFoto);
-        */
+        int resId = context.getResources().getIdentifier(dataFiltered.get(position).getFondo(), "drawable", context.getPackageName());
+        if(resId != 0) {
+            Picasso.with(context)
+                    .load(resId)
+                    .fit()
+                    .centerCrop()
+                    .placeholder(android.R.color.white)
+                    .error(android.R.color.white)
+                    .into(holder.verduraFoto);
+        }
 
         // LISTADO DE MESES //
 

@@ -72,14 +72,15 @@ public class VerduraAdapter extends RecyclerView.Adapter<VerduraAdapter.VerduraV
         // FOTO //
 
         int resId = context.getResources().getIdentifier(dataFiltered.get(position).getFondo(), "drawable", context.getPackageName());
-        Picasso.with(context)
-                .load(resId)
-                .fit()
-                .centerCrop()
-                .placeholder(android.R.color.white)
-                .error(android.R.color.white)
-                .into(holder.verduraFoto);
-
+        if(resId != 0) {
+            Picasso.with(context)
+                    .load(resId)
+                    .fit()
+                    .centerCrop()
+                    .placeholder(android.R.color.white)
+                    .error(android.R.color.white)
+                    .into(holder.verduraFoto);
+        }
         // LISTADO DE MESES //
 
         holder.mesesLayout.marcarMeses(dataFiltered.get(position).getMeses());
