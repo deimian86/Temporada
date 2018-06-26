@@ -93,12 +93,16 @@ public class CustomYearView extends FrameLayout {
         super.onLayout(changed, left, top, right, bottom);
     }
 
-    public void marcarMeses(List<Integer> meses){
+    public void marcarMeses(List<Integer> meses, List<Integer> mesesMenos){
         desmarcarMeses();
         for(Integer i : meses){
-            txtMeses.get(i-1).setTextColor(getResources().getColor(android.R.color.white));
-            txtMeses.get(i-1).setBackgroundResource(R.drawable.layout_rounded_active);
-            txtMeses.get(i-1).setAlpha(1.0f);
+            txtMeses.get(i - 1).setTextColor(getResources().getColor(android.R.color.white));
+            txtMeses.get(i - 1).setAlpha(1.0f);
+            if(!mesesMenos.contains(i)) {
+                txtMeses.get(i - 1).setBackgroundResource(R.drawable.layout_rounded_active_accent);
+            } else {
+                txtMeses.get(i - 1).setBackgroundResource(R.drawable.layout_rounded_active_accent_light);
+            }
         }
     }
 

@@ -48,7 +48,11 @@ public class AppDatabase_Create_Async extends AsyncTask<Void, Boolean, Boolean> 
             db.verduraDao().insertAll(v);
 
             for (int i : v.getMeses()) {
-                db.verduraMesDao().insertAll(new VerduraMes(v.getId(), i));
+                VerduraMes vm = new VerduraMes(v.getId(), i);
+                if(v.getMesesMenos().contains(i)){
+                    vm.setMenorVenta(true);
+                }
+                db.verduraMesDao().insertAll(vm);
             }
 
         }
@@ -64,7 +68,11 @@ public class AppDatabase_Create_Async extends AsyncTask<Void, Boolean, Boolean> 
             db.frutaDao().insertAll(f);
 
             for (int i : f.getMeses()) {
-                db.frutaMesDao().insertAll(new FrutaMes(f.getId(), i));
+                FrutaMes fm = new FrutaMes(f.getId(), i);
+                if(f.getMesesMenos().contains(i)){
+                    fm.setMenorVenta(true);
+                }
+                db.frutaMesDao().insertAll(fm);
             }
 
         }

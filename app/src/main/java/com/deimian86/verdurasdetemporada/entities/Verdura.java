@@ -28,6 +28,9 @@ public class Verdura {
     @Ignore
     private List<Integer> meses = new ArrayList<>();
 
+    @Ignore
+    private List<Integer> meses_menos = new ArrayList<>();
+
     public int getId() {
         return id;
     }
@@ -63,6 +66,10 @@ public class Verdura {
     public void setMeses(List<Integer> meses) {
         this.meses = meses;
     }
+
+    public List<Integer> getMesesMenos() { return meses_menos; }
+
+    public void setMesesMenos(List<Integer> meses_menos) { this.meses_menos = meses_menos; }
 
     @Override
     public String toString() {

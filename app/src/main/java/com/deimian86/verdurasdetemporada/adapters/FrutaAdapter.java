@@ -82,7 +82,7 @@ public class FrutaAdapter extends RecyclerView.Adapter<FrutaAdapter.FrutaViewHol
 
         // LISTADO DE MESES //
 
-        holder.mesesLayout.marcarMeses(dataFiltered.get(position).getMeses());
+        holder.mesesLayout.marcarMeses(dataFiltered.get(position).getMeses(), dataFiltered.get(position).getMesesMenos());
 
         // CLICK LISTENER //
 

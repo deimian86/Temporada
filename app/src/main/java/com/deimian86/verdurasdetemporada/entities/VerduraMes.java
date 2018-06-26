@@ -12,6 +12,9 @@ public class VerduraMes {
     @ColumnInfo(name = "mes_id")
     private int mesId;
 
+    @ColumnInfo(name = "menor_venta")
+    private boolean menorVenta;
+
     public VerduraMes(int verduraId, int mesId) {
         this.verduraId = verduraId;
         this.mesId = mesId;
@@ -29,11 +32,16 @@ public class VerduraMes {
 
     public void setMesId(int mesId) { this.mesId = mesId; }
 
+    public boolean isMenorVenta() { return menorVenta; }
+
+    public void setMenorVenta(boolean menorVenta) { this.menorVenta = menorVenta; }
+
     @Override
     public String toString() {
         return "VerduraMes{" +
                 "verduraId=" + verduraId +
                 ", mesId=" + mesId +
+                ", menorVenta=" + menorVenta +
                 '}';
     }
 }

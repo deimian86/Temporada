@@ -83,7 +83,7 @@ public class VerduraAdapter extends RecyclerView.Adapter<VerduraAdapter.VerduraV
         }
         // LISTADO DE MESES //
 
-        holder.mesesLayout.marcarMeses(dataFiltered.get(position).getMeses());
+        holder.mesesLayout.marcarMeses(dataFiltered.get(position).getMeses(), dataFiltered.get(position).getMesesMenos());
 
         // CLICK LISTENER //
 

@@ -63,6 +63,9 @@ public class VerdurasFragment extends Fragment {
                     for (VerduraMes vm: verdurasMesesTemp) {
                         Log.d(tag, "v = " + v.getNombre() + " vm = "  + vm.getMesId());
                         v.getMeses().add(vm.getMesId());
+                        if(vm.isMenorVenta()) {
+                            v.getMesesMenos().add(vm.getMesId());
+                        }
                     }
                     refreshAdapter(verdurasTemp);
                 }
