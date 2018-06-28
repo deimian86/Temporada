@@ -1,21 +1,18 @@
 package com.deimian86.verdurasdetemporada.adapters;
 
-import android.arch.persistence.room.Room;
 import android.content.Context;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.deimian86.verdurasdetemporada.R;
 import com.deimian86.verdurasdetemporada.entities.Verdura;
-import com.deimian86.verdurasdetemporada.utils.AppDatabase;
 import com.deimian86.verdurasdetemporada.utils.CustomYearView;
 import com.squareup.picasso.Picasso;
 
@@ -36,16 +33,16 @@ public class VerduraAdapter extends RecyclerView.Adapter<VerduraAdapter.VerduraV
     }
 
     public static class VerduraViewHolder extends RecyclerView.ViewHolder {
-        CardView cv;
-        TextView verduraNombre;
-        ImageView verduraFoto;
+        RelativeLayout cv;
+        TextView lytNombre;
+        ImageView lytFoto;
         CustomYearView mesesLayout;
 
         private VerduraViewHolder(View itemView) {
             super(itemView);
             cv = itemView.findViewById(R.id.cv);
-            verduraNombre = itemView.findViewById(R.id.verdura_nombre);
-            verduraFoto = itemView.findViewById(R.id.verdura_foto);
+            lytNombre = itemView.findViewById(R.id.lyt_detalle_nombre);
+            lytFoto = itemView.findViewById(R.id.lyt_detalle_foto);
             mesesLayout = itemView.findViewById(R.id.lyt_meses);
         }
     }
@@ -57,7 +54,7 @@ public class VerduraAdapter extends RecyclerView.Adapter<VerduraAdapter.VerduraV
 
     @Override
     public VerduraViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cardview_verdura, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.lyt_detalle, viewGroup, false);
         VerduraViewHolder vh = new VerduraViewHolder(v);
         return vh;
     }
@@ -67,7 +64,7 @@ public class VerduraAdapter extends RecyclerView.Adapter<VerduraAdapter.VerduraV
 
         // NOMBRE //
 
-        holder.verduraNombre.setText(dataFiltered.get(position).getNombre());
+        holder.lytNombre.setText(dataFiltered.get(position).getNombre());
 
         // FOTO //
 
@@ -79,7 +76,7 @@ public class VerduraAdapter extends RecyclerView.Adapter<VerduraAdapter.VerduraV
                     .centerCrop()
                     .placeholder(android.R.color.white)
                     .error(android.R.color.white)
-                    .into(holder.verduraFoto);
+                    .into(holder.lytFoto);
         }
         // LISTADO DE MESES //
 

@@ -1,7 +1,6 @@
 package com.deimian86.verdurasdetemporada.adapters;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,16 +34,16 @@ public class FrutaAdapter extends RecyclerView.Adapter<FrutaAdapter.FrutaViewHol
     }
 
     public static class FrutaViewHolder extends RecyclerView.ViewHolder {
-        CardView cv;
-        TextView verduraNombre;
-        ImageView verduraFoto;
+        RelativeLayout cv;
+        TextView lytNombre;
+        ImageView lytFoto;
         CustomYearView mesesLayout;
 
         private FrutaViewHolder(View itemView) {
             super(itemView);
             cv = itemView.findViewById(R.id.cv);
-            verduraNombre = itemView.findViewById(R.id.verdura_nombre);
-            verduraFoto = itemView.findViewById(R.id.verdura_foto);
+            lytNombre = itemView.findViewById(R.id.lyt_detalle_nombre);
+            lytFoto = itemView.findViewById(R.id.lyt_detalle_foto);
             mesesLayout = itemView.findViewById(R.id.lyt_meses);
         }
     }
@@ -55,7 +55,7 @@ public class FrutaAdapter extends RecyclerView.Adapter<FrutaAdapter.FrutaViewHol
 
     @Override
     public FrutaViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cardview_verdura, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.lyt_detalle, viewGroup, false);
         FrutaViewHolder vh = new FrutaViewHolder(v);
         return vh;
     }
@@ -65,7 +65,7 @@ public class FrutaAdapter extends RecyclerView.Adapter<FrutaAdapter.FrutaViewHol
 
         // NOMBRE //
 
-        holder.verduraNombre.setText(dataFiltered.get(position).getNombre());
+        holder.lytNombre.setText(dataFiltered.get(position).getNombre());
 
         // FOTO //
 
@@ -77,7 +77,7 @@ public class FrutaAdapter extends RecyclerView.Adapter<FrutaAdapter.FrutaViewHol
                     .centerCrop()
                     .placeholder(android.R.color.white)
                     .error(android.R.color.white)
-                    .into(holder.verduraFoto);
+                    .into(holder.lytFoto);
         }
 
         // LISTADO DE MESES //

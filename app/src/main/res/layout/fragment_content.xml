@@ -23,7 +23,6 @@
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="5dp"
             android:nestedScrollingEnabled="false"
             android:id="@+id/rv" />
 
