@@ -130,35 +130,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
-//
-//        final MenuItem myActionMenuItem = menu.findItem( R.id.action_search);
-//        SearchView searchView = (SearchView) myActionMenuItem.getActionView();
-//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                Log.d(tag,"onQueryTextSubmit: " + query);
-//                // adapter.getFilter().filter(query);
-//                // myActionMenuItem.collapseActionView();
-//                return false;
-//            }
-//            @Override
-//            public boolean onQueryTextChange(String s) {
-//                Log.d(tag,"SearchOnQueryTextChanged: " + s);
-//                // adapter.getFilter().filter(s);
-//                return false;
-//            }
-//        });
-//
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        return super.onOptionsItemSelected(item);
-//    }
-
 }
