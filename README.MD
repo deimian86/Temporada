@@ -8,6 +8,7 @@ Application created as a playground to try different concepts. It's also a calen
 Download
 --------
 
+<a href="https://play.google.com/store/apps/details?id=com.deimian86.verdurasdetemporada"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=36px /></a>
 
 License
 --------
