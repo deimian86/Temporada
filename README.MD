@@ -2,8 +2,8 @@ Verduras de Temporada
 =======
 Application created as a playground to try different concepts. It's also a calendar of seasonal fruits and vegetables.
 
-![TimeLapse screenshot1](https://raw.githubusercontent.com/deimian86/TimeLapse/master/screenshot1.png)
-![TimeLapse screenshot2](https://raw.githubusercontent.com/deimian86/TimeLapse/master/screenshot2.png)
+![VerdurasDeTemporada screenshot1](https://raw.githubusercontent.com/deimian86/VerdurasDeTemporada/master/screenshot1.png)
+![VerdurasDeTemporada screenshot2](https://raw.githubusercontent.com/deimian86/VerdurasDeTemporada/master/screenshot2.png)
 
 Download
 --------
