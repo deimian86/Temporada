@@ -12,7 +12,7 @@ import java.util.List;
 public interface FrutaDao {
 
     @Query("SELECT * FROM fruta")
-    LiveData<List<Fruta>> getAll();
+    List<Fruta> getAll();
 
     @Query("SELECT * FROM fruta WHERE id IN (:ids)")
     LiveData<List<Fruta>> findAllByIds(int[] ids);

@@ -1,9 +1,7 @@
 package com.deimian86.verdurasdetemporada.fragments;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.Observer;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,28 +15,30 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import com.deimian86.verdurasdetemporada.R;
-import com.deimian86.verdurasdetemporada.activities.MainActivity;
 import com.deimian86.verdurasdetemporada.adapters.VerduraAdapter;
 import com.deimian86.verdurasdetemporada.entities.Verdura;
 import com.deimian86.verdurasdetemporada.entities.VerduraMes;
+import com.deimian86.verdurasdetemporada.utils.AppDatabase;
+import com.deimian86.verdurasdetemporada.utils.BusProvider;
+import com.squareup.otto.Subscribe;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class VerdurasFragment extends Fragment {
 
     private String tag = this.getClass().getName();
-    private View v;
     private RecyclerView rv;
     private List<Verdura> verduras = new ArrayList<>();
     private VerduraAdapter adapter;
     private ProgressBar progressBar;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.fragment_content, container, false);
+        View v = inflater.inflate(R.layout.fragment_content, container, false);
         setHasOptionsMenu(true);
         rv = v.findViewById(R.id.rv);
+        rv.setVisibility(View.INVISIBLE);
         progressBar = v.findViewById(R.id.progressBar);
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         rv.setLayoutManager(llm);
@@ -48,41 +48,21 @@ public class VerdurasFragment extends Fragment {
         return v;
     }
 
-    private void loadVerduras(){
-        LiveData<List<Verdura>> verdurasLiveList = ((MainActivity) getActivity()).db.verduraDao().getAll();
-        verdurasLiveList.observe(getActivity(), new Observer<List<Verdura>>() {
-            @Override
-            public void onChanged(@Nullable List<Verdura> verdurasTemp) {
-                loadMesesPorVerdura(verdurasTemp);
-            }
-        });
+    @Subscribe
+    public void dbReady(String created) {
+        loadVerduras();
     }
 
-    private void loadMesesPorVerdura(final List<Verdura> verdurasTemp){
-
-        for (final Verdura v: verdurasTemp) {
-            LiveData<List<VerduraMes>> verdurasMesLiveList = ((MainActivity) getActivity()).db.verduraMesDao().findMesesPorVerdura(v.getId());
-            verdurasMesLiveList.observe(getActivity(), new Observer<List<VerduraMes>>() {
-                @Override
-                public void onChanged(@Nullable List<VerduraMes> verdurasMesesTemp) {
-                    for (VerduraMes vm: verdurasMesesTemp) {
-                        Log.d(tag, "v = " + v.getNombre() + " vm = "  + vm.getMesId());
-                        v.getMeses().add(vm.getMesId());
-                        if(vm.isMenorVenta()) {
-                            v.getMesesMenos().add(vm.getMesId());
-                        }
-                    }
-                    refreshAdapter(verdurasTemp);
-                }
-            });
-        }
-        progressBar.setVisibility(View.INVISIBLE);
+    private void loadVerduras(){
+        new LoadVerdurasAsync().execute();
     }
 
     private void refreshAdapter(List<Verdura> verdurasTemp){
         verduras.clear();
         verduras.addAll(verdurasTemp);
         adapter.notifyDataSetChanged();
+        progressBar.setVisibility(View.INVISIBLE);
+        rv.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -106,6 +86,52 @@ public class VerdurasFragment extends Fragment {
             }
         });
         super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    private class LoadVerdurasAsync extends AsyncTask<Void, Void, Void> {
+
+        private List<Verdura> verdurasTemp;
+        private AppDatabase db;
+
+        private LoadVerdurasAsync() {
+            this.db = AppDatabase.getDatabase(getActivity());
+        }
+
+        @Override
+        protected Void doInBackground(final Void... params) {
+            verdurasTemp = db.verduraDao().getAll();
+            for (final Verdura v: verdurasTemp) {
+                List<VerduraMes> verdurasMesList = db.verduraMesDao().findMesesPorVerdura(v.getId());
+                for (VerduraMes vm: verdurasMesList) {
+                    Log.d(tag, "v = " + v.getNombre() + " vm = "  + vm.getMesId());
+                    v.getMeses().add(vm.getMesId());
+                    if(vm.isMenorVenta()) {
+                        v.getMesesMenos().add(vm.getMesId());
+                    }
+                }
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            if(verdurasTemp.size() > 0) {
+                refreshAdapter(verdurasTemp);
+            }
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        BusProvider.getInstance().register(this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        BusProvider.getInstance().unregister(this);
     }
 
 }

@@ -11,7 +11,7 @@ import java.util.List;
 public interface VerduraDao {
 
     @Query("SELECT * FROM verdura")
-    LiveData<List<Verdura>> getAll();
+    List<Verdura> getAll();
 
     @Query("SELECT * FROM verdura WHERE id IN (:ids)")
     LiveData<List<Verdura>> findAllByIds(int[] ids);

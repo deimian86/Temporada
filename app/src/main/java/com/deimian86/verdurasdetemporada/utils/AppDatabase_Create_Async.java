@@ -100,4 +100,9 @@ public class AppDatabase_Create_Async extends AsyncTask<Void, Boolean, Boolean> 
         }
     }
 
+    @Override
+    protected void onPostExecute(Boolean aBoolean) {
+        super.onPostExecute(aBoolean);
+        BusProvider.getInstance().post("ASYNCED");
+    }
 }

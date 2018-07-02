@@ -12,7 +12,7 @@ import java.util.List;
 public interface VerduraMesDao {
 
     @Query("SELECT * FROM verdura_mes WHERE verdura_id == :idVerdura")
-    LiveData<List<VerduraMes>> findMesesPorVerdura(int idVerdura);
+    List<VerduraMes> findMesesPorVerdura(int idVerdura);
 
     @Insert
     void insertAll(VerduraMes... verduraMes);
