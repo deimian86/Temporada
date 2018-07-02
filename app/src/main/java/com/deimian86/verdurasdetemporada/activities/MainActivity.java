@@ -11,15 +11,10 @@ import android.support.v7.widget.Toolbar;
 import com.deimian86.verdurasdetemporada.R;
 import com.deimian86.verdurasdetemporada.fragments.FrutasFragment;
 import com.deimian86.verdurasdetemporada.fragments.VerdurasFragment;
-import com.deimian86.verdurasdetemporada.utils.AppDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
-    private String tag = this.getClass().getName();
-    private MainActivityPagerAdapter adapter;
-    private ViewPager mViewPager;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void init(){
-        mViewPager = findViewById(R.id.pager);
+        ViewPager mViewPager = findViewById(R.id.pager);
         setupViewPager(mViewPager);
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -92,7 +87,5 @@ public class MainActivity extends AppCompatActivity {
             return mFragmentTitleList.get(position);
         }
 
-
     }
-
 }

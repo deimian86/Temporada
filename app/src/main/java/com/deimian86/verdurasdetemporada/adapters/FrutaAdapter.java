@@ -71,7 +71,7 @@ public class FrutaAdapter extends RecyclerView.Adapter<FrutaAdapter.FrutaViewHol
 
         int resId = context.getResources().getIdentifier(dataFiltered.get(position).getFondo(), "drawable", context.getPackageName());
         if(resId != 0) {
-            Picasso.with(context)
+            Picasso.get()
                     .load(resId)
                     .fit()
                     .centerCrop()

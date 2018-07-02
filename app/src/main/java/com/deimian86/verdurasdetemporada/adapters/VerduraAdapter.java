@@ -70,7 +70,7 @@ public class VerduraAdapter extends RecyclerView.Adapter<VerduraAdapter.VerduraV
 
         int resId = context.getResources().getIdentifier(dataFiltered.get(position).getFondo(), "drawable", context.getPackageName());
         if(resId != 0) {
-            Picasso.with(context)
+            Picasso.get()
                     .load(resId)
                     .fit()
                     .centerCrop()

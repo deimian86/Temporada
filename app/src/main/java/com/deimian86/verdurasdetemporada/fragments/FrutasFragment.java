@@ -38,6 +38,7 @@ public class FrutasFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_content, container, false);
         setHasOptionsMenu(true);
+        setRetainInstance(true);
         rv = v.findViewById(R.id.rv);
         rv.setVisibility(View.INVISIBLE);
         progressBar = v.findViewById(R.id.progressBar);
