@@ -1,24 +1,20 @@
 package com.deimian86.verdurasdetemporada.utils;
 
-import android.arch.persistence.db.SupportSQLiteDatabase;
-import android.arch.persistence.room.Database;
-import android.arch.persistence.room.Room;
-import android.arch.persistence.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.util.Log;
+import androidx.annotation.NonNull;
 
-import com.deimian86.verdurasdetemporada.activities.MainActivity;
 import com.deimian86.verdurasdetemporada.entities.Fruta;
 import com.deimian86.verdurasdetemporada.entities.FrutaDao;
 import com.deimian86.verdurasdetemporada.entities.FrutaMes;
 import com.deimian86.verdurasdetemporada.entities.FrutaMesDao;
-import com.deimian86.verdurasdetemporada.entities.Mes;
 import com.deimian86.verdurasdetemporada.entities.Verdura;
 import com.deimian86.verdurasdetemporada.entities.VerduraDao;
 import com.deimian86.verdurasdetemporada.entities.VerduraMes;
 import com.deimian86.verdurasdetemporada.entities.VerduraMesDao;
-import com.deimian86.verdurasdetemporada.fragments.VerdurasFragment;
 
 @Database(entities = {Verdura.class, VerduraMes.class, Fruta.class, FrutaMes.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
