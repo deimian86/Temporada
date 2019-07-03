@@ -46,6 +46,7 @@ public class FrutasFragment extends Fragment {
         rv.setLayoutManager(llm);
         adapter = new FrutaAdapter(getContext(), frutas);
         rv.setAdapter(adapter);
+        rv.setHasFixedSize(true);
         loadFrutas();
         return v;
     }

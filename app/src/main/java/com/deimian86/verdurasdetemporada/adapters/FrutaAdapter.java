@@ -12,10 +12,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.deimian86.verdurasdetemporada.R;
 import com.deimian86.verdurasdetemporada.entities.Fruta;
 import com.deimian86.verdurasdetemporada.utils.CustomYearView;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,12 +71,10 @@ public class FrutaAdapter extends RecyclerView.Adapter<FrutaAdapter.FrutaViewHol
 
         int resId = context.getResources().getIdentifier(dataFiltered.get(position).getFondo(), "drawable", context.getPackageName());
         if(resId != 0) {
-            Picasso.get()
+            Glide.with(context)
                     .load(resId)
-                    .fit()
                     .centerCrop()
                     .placeholder(android.R.color.white)
-                    .error(android.R.color.white)
                     .into(holder.lytFoto);
         }
 

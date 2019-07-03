@@ -45,6 +45,7 @@ public class VerdurasFragment extends Fragment {
         rv.setLayoutManager(llm);
         adapter = new VerduraAdapter(getContext(), verduras);
         rv.setAdapter(adapter);
+        rv.setHasFixedSize(true);
         loadVerduras();
         return v;
     }
