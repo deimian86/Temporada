@@ -2,10 +2,6 @@ package com.deimian86.verdurasdetemporada.fragments;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.widget.SearchView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -14,23 +10,26 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import androidx.appcompat.widget.SearchView;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.deimian86.verdurasdetemporada.R;
-import com.deimian86.verdurasdetemporada.adapters.VerduraAdapter;
-import com.deimian86.verdurasdetemporada.entities.verduras.Verdura;
-import com.deimian86.verdurasdetemporada.entities.verduras.VerduraMes;
+import com.deimian86.verdurasdetemporada.adapters.PescadoAdapter;
+import com.deimian86.verdurasdetemporada.entities.pescados.Pescado;
+import com.deimian86.verdurasdetemporada.entities.pescados.PescadoMes;
 import com.deimian86.verdurasdetemporada.utils.AppDatabase;
 import com.deimian86.verdurasdetemporada.utils.BusProvider;
 import com.squareup.otto.Subscribe;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class VerdurasFragment extends Fragment {
+public class PescadosFragment extends Fragment {
 
     private String tag = this.getClass().getName();
     private RecyclerView rv;
-    private List<Verdura> verduras = new ArrayList<>();
-    private VerduraAdapter adapter;
+    private List<Pescado> pescados = new ArrayList<>();
+    private PescadoAdapter adapter;
     private ProgressBar progressBar;
 
     @Override
@@ -43,7 +42,7 @@ public class VerdurasFragment extends Fragment {
         progressBar = v.findViewById(R.id.progressBar);
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         rv.setLayoutManager(llm);
-        adapter = new VerduraAdapter(getContext(), verduras);
+        adapter = new PescadoAdapter(getContext(), pescados);
         rv.setAdapter(adapter);
         rv.setHasFixedSize(true);
         loadVerduras();
@@ -56,12 +55,12 @@ public class VerdurasFragment extends Fragment {
     }
 
     private void loadVerduras(){
-        new LoadVerdurasAsync().execute();
+        new LoadPescadosAsync().execute();
     }
 
-    private void refreshAdapter(List<Verdura> verdurasTemp){
-        verduras.clear();
-        verduras.addAll(verdurasTemp);
+    private void refreshAdapter(List<Pescado> pescadosTemp){
+        pescados.clear();
+        pescados.addAll(pescadosTemp);
         adapter.notifyDataSetChanged();
         progressBar.setVisibility(View.INVISIBLE);
         rv.setVisibility(View.VISIBLE);
@@ -90,21 +89,22 @@ public class VerdurasFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-    private class LoadVerdurasAsync extends AsyncTask<Void, Void, Void> {
+    private class LoadPescadosAsync extends AsyncTask<Void, Void, Void> {
 
-        private List<Verdura> verdurasTemp;
+        private List<Pescado> pescadosTemp;
         private AppDatabase db;
 
-        private LoadVerdurasAsync() {
+
+        private LoadPescadosAsync() {
             this.db = AppDatabase.getDatabase(getActivity());
         }
 
         @Override
         protected Void doInBackground(final Void... params) {
-            verdurasTemp = db.verduraDao().getAll();
-            for (final Verdura v: verdurasTemp) {
-                List<VerduraMes> verdurasMesList = db.verduraMesDao().findMesesPorVerdura(v.getId());
-                for (VerduraMes vm: verdurasMesList) {
+            pescadosTemp = db.pescadoDao().getAll();
+            for (final Pescado v: pescadosTemp) {
+                List<PescadoMes> verdurasMesList = db.pescadoMesDao().findMesesPorPescado(v.getId());
+                for (PescadoMes vm: verdurasMesList) {
                     Log.d(tag, "v = " + v.getNombre() + " vm = "  + vm.getMesId());
                     v.getMeses().add(vm.getMesId());
                     if(vm.isMenorVenta()) {
@@ -118,8 +118,8 @@ public class VerdurasFragment extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            if(verdurasTemp.size() > 0) {
-                refreshAdapter(verdurasTemp);
+            if(pescadosTemp.size() > 0) {
+                refreshAdapter(pescadosTemp);
             }
         }
     }

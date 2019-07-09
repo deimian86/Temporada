@@ -2,10 +2,6 @@ package com.deimian86.verdurasdetemporada.fragments;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.widget.SearchView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -14,10 +10,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+
+import androidx.appcompat.widget.SearchView;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.deimian86.verdurasdetemporada.R;
-import com.deimian86.verdurasdetemporada.adapters.VerduraAdapter;
-import com.deimian86.verdurasdetemporada.entities.verduras.Verdura;
-import com.deimian86.verdurasdetemporada.entities.verduras.VerduraMes;
+import com.deimian86.verdurasdetemporada.adapters.MariscoAdapter;
+import com.deimian86.verdurasdetemporada.entities.mariscos.Marisco;
+import com.deimian86.verdurasdetemporada.entities.mariscos.MariscoMes;
 import com.deimian86.verdurasdetemporada.utils.AppDatabase;
 import com.deimian86.verdurasdetemporada.utils.BusProvider;
 import com.squareup.otto.Subscribe;
@@ -25,12 +27,12 @@ import com.squareup.otto.Subscribe;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VerdurasFragment extends Fragment {
+public class MariscosFragment extends Fragment {
 
     private String tag = this.getClass().getName();
     private RecyclerView rv;
-    private List<Verdura> verduras = new ArrayList<>();
-    private VerduraAdapter adapter;
+    private List<Marisco> verduras = new ArrayList<>();
+    private MariscoAdapter adapter;
     private ProgressBar progressBar;
 
     @Override
@@ -43,7 +45,7 @@ public class VerdurasFragment extends Fragment {
         progressBar = v.findViewById(R.id.progressBar);
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         rv.setLayoutManager(llm);
-        adapter = new VerduraAdapter(getContext(), verduras);
+        adapter = new MariscoAdapter(getContext(), verduras);
         rv.setAdapter(adapter);
         rv.setHasFixedSize(true);
         loadVerduras();
@@ -59,7 +61,7 @@ public class VerdurasFragment extends Fragment {
         new LoadVerdurasAsync().execute();
     }
 
-    private void refreshAdapter(List<Verdura> verdurasTemp){
+    private void refreshAdapter(List<Marisco> verdurasTemp){
         verduras.clear();
         verduras.addAll(verdurasTemp);
         adapter.notifyDataSetChanged();
@@ -92,7 +94,7 @@ public class VerdurasFragment extends Fragment {
 
     private class LoadVerdurasAsync extends AsyncTask<Void, Void, Void> {
 
-        private List<Verdura> verdurasTemp;
+        private List<Marisco> verdurasTemp;
         private AppDatabase db;
 
         private LoadVerdurasAsync() {
@@ -101,10 +103,10 @@ public class VerdurasFragment extends Fragment {
 
         @Override
         protected Void doInBackground(final Void... params) {
-            verdurasTemp = db.verduraDao().getAll();
-            for (final Verdura v: verdurasTemp) {
-                List<VerduraMes> verdurasMesList = db.verduraMesDao().findMesesPorVerdura(v.getId());
-                for (VerduraMes vm: verdurasMesList) {
+            verdurasTemp = db.mariscoDao().getAll();
+            for (final Marisco v: verdurasTemp) {
+                List<MariscoMes> verdurasMesList = db.mariscoMesDao().findMesesPorMarisco(v.getId());
+                for (MariscoMes vm: verdurasMesList) {
                     Log.d(tag, "v = " + v.getNombre() + " vm = "  + vm.getMesId());
                     v.getMeses().add(vm.getMesId());
                     if(vm.isMenorVenta()) {

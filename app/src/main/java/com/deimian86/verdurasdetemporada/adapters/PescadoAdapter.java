@@ -1,7 +1,6 @@
 package com.deimian86.verdurasdetemporada.adapters;
 
 import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,34 +11,36 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import com.deimian86.verdurasdetemporada.R;
-import com.deimian86.verdurasdetemporada.entities.frutas.Fruta;
+import com.deimian86.verdurasdetemporada.entities.pescados.Pescado;
 import com.deimian86.verdurasdetemporada.utils.CustomYearView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FrutaAdapter extends RecyclerView.Adapter<FrutaAdapter.FrutaViewHolder> implements Filterable {
+public class PescadoAdapter extends RecyclerView.Adapter<PescadoAdapter.PescadoViewHolder> implements Filterable {
 
     private String tag = this.getClass().getName();
-    private List<Fruta> data;
-    private List<Fruta> dataFiltered;
+    private List<Pescado> data;
+    private List<Pescado> dataFiltered;
     private Context context;
 
-    public FrutaAdapter(Context context, List<Fruta> data){
+    public PescadoAdapter(Context context, List<Pescado> data){
         this.context = context;
         this.data = data;
         this.dataFiltered = data;
     }
 
-    public static class FrutaViewHolder extends RecyclerView.ViewHolder {
+    public static class PescadoViewHolder extends RecyclerView.ViewHolder {
         RelativeLayout cv;
         TextView lytNombre;
         ImageView lytFoto;
         CustomYearView mesesLayout;
 
-        private FrutaViewHolder(View itemView) {
+        private PescadoViewHolder(View itemView) {
             super(itemView);
             cv = itemView.findViewById(R.id.cv);
             lytNombre = itemView.findViewById(R.id.lyt_detalle_nombre);
@@ -54,14 +55,14 @@ public class FrutaAdapter extends RecyclerView.Adapter<FrutaAdapter.FrutaViewHol
     }
 
     @Override
-    public FrutaViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public PescadoViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.lyt_detalle, viewGroup, false);
-        FrutaViewHolder vh = new FrutaViewHolder(v);
+        PescadoViewHolder vh = new PescadoViewHolder(v);
         return vh;
     }
 
     @Override
-    public void onBindViewHolder(FrutaViewHolder holder, final int position) {
+    public void onBindViewHolder(PescadoViewHolder holder, final int position) {
 
         // NOMBRE //
 
@@ -102,8 +103,8 @@ public class FrutaAdapter extends RecyclerView.Adapter<FrutaAdapter.FrutaViewHol
                 if (charString.isEmpty()) {
                     dataFiltered = data;
                 } else {
-                    List<Fruta> filteredList = new ArrayList<>();
-                    for (Fruta row : data) {
+                    List<Pescado> filteredList = new ArrayList<>();
+                    for (Pescado row : data) {
                         if (row.getNombre().toLowerCase().contains(charString.toLowerCase())) {
                             filteredList.add(row);
                         }
@@ -118,7 +119,7 @@ public class FrutaAdapter extends RecyclerView.Adapter<FrutaAdapter.FrutaViewHol
 
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                dataFiltered = (ArrayList<Fruta>) filterResults.values;
+                dataFiltered = (ArrayList<Pescado>) filterResults.values;
                 notifyDataSetChanged();
             }
         };

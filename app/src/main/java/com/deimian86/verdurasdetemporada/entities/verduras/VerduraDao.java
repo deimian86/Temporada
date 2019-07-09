@@ -1,4 +1,4 @@
-package com.deimian86.verdurasdetemporada.entities;
+package com.deimian86.verdurasdetemporada.entities.verduras;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;

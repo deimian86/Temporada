@@ -1,0 +1,193 @@
+[
+  {
+    "id": "1",
+    "nombre": "Atún",
+    "foto": "img_p_01",
+    "fondo": "background_p_01",
+    "meses": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "2",
+    "nombre": "Bacalao",
+    "foto": "img_p_02",
+    "fondo": "background_p_02",
+    "meses": [
+      1,
+      2,
+      3,
+      12
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "3",
+    "nombre": "Besugo",
+    "foto": "img_p_03",
+    "fondo": "background_p_03",
+    "meses": [
+      1,
+      2,
+      3,
+      12
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "4",
+    "nombre": "Bonito",
+    "foto": "img_p_04",
+    "fondo": "background_p_04",
+    "meses": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "5",
+    "nombre": "Cabracho",
+    "foto": "img_p_05",
+    "fondo": "background_p_05",
+    "meses": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "6",
+    "nombre": "Congrio",
+    "foto": "img_p_06",
+    "fondo": "background_p_06",
+    "meses": [
+      3,
+      4,
+      5
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "7",
+    "nombre": "Lenguado",
+    "foto": "img_p_07",
+    "fondo": "background_p_07",
+    "meses": [
+      3,
+      4
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "8",
+    "nombre": "Merluza",
+    "foto": "img_p_08",
+    "fondo": "background_p_08",
+    "meses": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "9",
+    "nombre": "Emperador",
+    "foto": "img_p_09",
+    "fondo": "background_p_09",
+    "meses": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "10",
+    "nombre": "Sardina",
+    "foto": "img_p_10",
+    "fondo": "background_p_10",
+    "meses": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "11",
+    "nombre": "Dorada",
+    "foto": "img_p_11",
+    "fondo": "background_p_11",
+    "meses": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "12",
+    "nombre": "Salmón",
+    "foto": "img_p_12",
+    "fondo": "background_p_12",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "13",
+    "nombre": "Trucha",
+    "foto": "img_p_13",
+    "fondo": "background_p_13",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": []
+  }
+]

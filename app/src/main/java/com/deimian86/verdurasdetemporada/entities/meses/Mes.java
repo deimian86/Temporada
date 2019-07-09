@@ -1,4 +1,4 @@
-package com.deimian86.verdurasdetemporada.entities;
+package com.deimian86.verdurasdetemporada.entities.meses;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

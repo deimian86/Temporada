@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.deimian86.verdurasdetemporada.R;
-import com.deimian86.verdurasdetemporada.entities.Verdura;
+import com.deimian86.verdurasdetemporada.entities.verduras.Verdura;
 import com.deimian86.verdurasdetemporada.utils.CustomYearView;
 
 import java.util.ArrayList;

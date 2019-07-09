@@ -1,6 +1,5 @@
-package com.deimian86.verdurasdetemporada.entities;
+package com.deimian86.verdurasdetemporada.entities.verduras;
 
-import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;

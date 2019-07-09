@@ -1,0 +1,159 @@
+[
+  {
+    "id": "1",
+    "nombre": "Bogavante",
+    "foto": "img_m_1",
+    "fondo": "background_m_01",
+    "meses": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "2",
+    "nombre": "Langostinos",
+    "foto": "img_m_2",
+    "fondo": "background_m_02",
+    "meses": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "3",
+    "nombre": "Percebe",
+    "foto": "img_m_3",
+    "fondo": "background_m_03",
+    "meses": [
+      3,
+      6,
+      9
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "4",
+    "nombre": "Cigala",
+    "foto": "img_m_4",
+    "fondo": "background_m_04",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "5",
+    "nombre": "Centolla",
+    "foto": "img_m_5",
+    "fondo": "background_m_05",
+    "meses": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "6",
+    "nombre": "Berberechos",
+    "foto": "img_m_6",
+    "fondo": "background_m_06",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "7",
+    "nombre": "Pulpo",
+    "foto": "img_m_7",
+    "fondo": "background_m_07",
+    "meses": [
+      1,
+      9,
+      10
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "8",
+    "nombre": "Ostras",
+    "foto": "img_m_8",
+    "fondo": "background_m_08",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "9",
+    "nombre": "Mejillones",
+    "foto": "img_m_9",
+    "fondo": "background_m_09",
+    "meses": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "meses_menos": []
+  },
+  {
+    "id": "10",
+    "nombre": "Calamares",
+    "foto": "img_m_10",
+    "fondo": "background_m_10",
+    "meses": [
+      7,
+      8,
+      9
+    ],
+    "meses_menos": []
+  }
+]

@@ -1,10 +1,12 @@
 <resources>
-    <string name="app_name">Verduras de Temporada</string>
+    <string name="app_name">De Temporada</string>
     <string name="txt_prueba_abreviatura">PRB</string>
     <string name="txt_prueba_verdura">Verdura</string>
     <string name="txt_buscar">Buscar</string>
 
     <string name="tab_verduras">Verduras</string>
     <string name="tab_frutas">Frutas</string>
+    <string name="tab_pescados">Pescados</string>
+    <string name="tab_mariscos">Mariscos</string>
 
 </resources>

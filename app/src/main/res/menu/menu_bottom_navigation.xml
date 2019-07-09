@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.deimian86.verdurasdetemporada.activities.MainActivity">
+
+    <item
+        android:id="@+id/action_verduras"
+        android:checked="true"
+        android:icon="@drawable/ic_salad"
+        android:title="@string/tab_verduras"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_frutas"
+        android:checked="false"
+        android:icon="@drawable/ic_fruit"
+        android:title="@string/tab_frutas"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_pescados"
+        android:checked="false"
+        android:icon="@drawable/ic_fish"
+        android:title="@string/tab_pescados"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_mariscos"
+        android:checked="false"
+        android:icon="@drawable/ic_crab"
+        android:title="@string/tab_mariscos"
+        app:showAsAction="ifRoom" />
+</menu>

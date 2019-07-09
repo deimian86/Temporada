@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.deimian86.verdurasdetemporada.R;
-import com.deimian86.verdurasdetemporada.entities.Mes;
+import com.deimian86.verdurasdetemporada.entities.meses.Mes;
 
 import java.util.ArrayList;
 import java.util.List;

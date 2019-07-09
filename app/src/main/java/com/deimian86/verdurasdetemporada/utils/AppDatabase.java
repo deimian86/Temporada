@@ -7,22 +7,34 @@ import androidx.room.RoomDatabase;
 import android.content.Context;
 import androidx.annotation.NonNull;
 
-import com.deimian86.verdurasdetemporada.entities.Fruta;
-import com.deimian86.verdurasdetemporada.entities.FrutaDao;
-import com.deimian86.verdurasdetemporada.entities.FrutaMes;
-import com.deimian86.verdurasdetemporada.entities.FrutaMesDao;
-import com.deimian86.verdurasdetemporada.entities.Verdura;
-import com.deimian86.verdurasdetemporada.entities.VerduraDao;
-import com.deimian86.verdurasdetemporada.entities.VerduraMes;
-import com.deimian86.verdurasdetemporada.entities.VerduraMesDao;
+import com.deimian86.verdurasdetemporada.entities.frutas.Fruta;
+import com.deimian86.verdurasdetemporada.entities.frutas.FrutaDao;
+import com.deimian86.verdurasdetemporada.entities.frutas.FrutaMes;
+import com.deimian86.verdurasdetemporada.entities.frutas.FrutaMesDao;
+import com.deimian86.verdurasdetemporada.entities.mariscos.Marisco;
+import com.deimian86.verdurasdetemporada.entities.mariscos.MariscoDao;
+import com.deimian86.verdurasdetemporada.entities.mariscos.MariscoMes;
+import com.deimian86.verdurasdetemporada.entities.mariscos.MariscoMesDao;
+import com.deimian86.verdurasdetemporada.entities.pescados.Pescado;
+import com.deimian86.verdurasdetemporada.entities.pescados.PescadoDao;
+import com.deimian86.verdurasdetemporada.entities.pescados.PescadoMes;
+import com.deimian86.verdurasdetemporada.entities.pescados.PescadoMesDao;
+import com.deimian86.verdurasdetemporada.entities.verduras.Verdura;
+import com.deimian86.verdurasdetemporada.entities.verduras.VerduraDao;
+import com.deimian86.verdurasdetemporada.entities.verduras.VerduraMes;
+import com.deimian86.verdurasdetemporada.entities.verduras.VerduraMesDao;
 
-@Database(entities = {Verdura.class, VerduraMes.class, Fruta.class, FrutaMes.class}, version = 1, exportSchema = false)
+@Database(entities = {Verdura.class, VerduraMes.class, Fruta.class, FrutaMes.class, Pescado.class, PescadoMes.class, Marisco.class, MariscoMes.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract VerduraDao verduraDao();
     public abstract VerduraMesDao verduraMesDao();
     public abstract FrutaDao frutaDao();
     public abstract FrutaMesDao frutaMesDao();
+    public abstract MariscoDao mariscoDao();
+    public abstract MariscoMesDao mariscoMesDao();
+    public abstract PescadoDao pescadoDao();
+    public abstract PescadoMesDao pescadoMesDao();
 
     private static AppDatabase INSTANCE;
 
@@ -31,7 +43,7 @@ public abstract class AppDatabase extends RoomDatabase {
             synchronized (AppDatabase.class) {
                 if (INSTANCE == null) {
                     RoomDatabase.Callback rdc = getCallBackInstance(context);
-                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class,"verduras-frutas-db").addCallback(rdc).build();
+                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class,"de-temporada-db").addCallback(rdc).build();
                 }
             }
         }

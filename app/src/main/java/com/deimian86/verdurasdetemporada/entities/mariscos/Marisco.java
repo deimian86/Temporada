@@ -1,17 +1,15 @@
-package com.deimian86.verdurasdetemporada.entities;
+package com.deimian86.verdurasdetemporada.entities.mariscos;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
-import androidx.room.Relation;
-import androidx.room.TypeConverters;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Verdura {
+public class Marisco {
 
     @PrimaryKey
     private int id;
@@ -73,7 +71,7 @@ public class Verdura {
 
     @Override
     public String toString() {
-        return "Verdura{" +
+        return "Marisco{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", foto='" + foto + '\'' +
