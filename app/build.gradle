@@ -15,6 +15,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        all {
+            buildConfigField("String", "MS_APPCENTER_SECRET", "\"${System.env.MS_APPCENTER_SECRET}\"")
+        }
     }
     buildToolsVersion '29.0.0'
 }

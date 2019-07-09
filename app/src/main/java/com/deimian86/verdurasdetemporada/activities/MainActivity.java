@@ -3,6 +3,7 @@ package com.deimian86.verdurasdetemporada.activities;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.deimian86.verdurasdetemporada.BuildConfig;
 import com.deimian86.verdurasdetemporada.fragments.MariscosFragment;
 import com.deimian86.verdurasdetemporada.fragments.PescadosFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AppCenter.start(getApplication(), getResources().getString(R.string.ms_app_secret), Analytics.class, Crashes.class);
+        AppCenter.start(getApplication(), BuildConfig.MS_APPCENTER_SECRET, Analytics.class, Crashes.class);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
