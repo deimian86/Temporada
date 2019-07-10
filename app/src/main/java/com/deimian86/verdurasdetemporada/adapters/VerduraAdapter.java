@@ -49,6 +49,11 @@ public class VerduraAdapter extends RecyclerView.Adapter<VerduraAdapter.VerduraV
     }
 
     @Override
+    public long getItemId(int position) {
+        return dataFiltered.get(position).hashCode();
+    }
+
+    @Override
     public int getItemCount() {
         return dataFiltered.size();
     }

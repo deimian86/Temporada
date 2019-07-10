@@ -45,16 +45,16 @@ public class PescadosFragment extends Fragment {
         adapter = new PescadoAdapter(getContext(), pescados);
         rv.setAdapter(adapter);
         rv.setHasFixedSize(true);
-        loadVerduras();
+        loadPescados();
         return v;
     }
 
     @Subscribe
     public void dbReady(String created) {
-        loadVerduras();
+        loadPescados();
     }
 
-    private void loadVerduras(){
+    private void loadPescados(){
         new LoadPescadosAsync().execute();
     }
 

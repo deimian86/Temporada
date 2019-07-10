@@ -48,16 +48,16 @@ public class MariscosFragment extends Fragment {
         adapter = new MariscoAdapter(getContext(), verduras);
         rv.setAdapter(adapter);
         rv.setHasFixedSize(true);
-        loadVerduras();
+        loadMariscos();
         return v;
     }
 
     @Subscribe
     public void dbReady(String created) {
-        loadVerduras();
+        loadMariscos();
     }
 
-    private void loadVerduras(){
+    private void loadMariscos(){
         new LoadVerdurasAsync().execute();
     }
 

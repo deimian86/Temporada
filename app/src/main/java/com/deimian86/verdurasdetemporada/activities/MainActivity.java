@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         final ViewPager mViewPager = findViewById(R.id.pager);
         setupViewPager(mViewPager);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        final BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                                 mViewPager.setCurrentItem(3);
                                 break;
                         }
-                        return false;
+                        return true;
                     }
                 });
     }
