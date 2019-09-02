@@ -2,6 +2,9 @@ package com.deimian86.verdurasdetemporada.activities;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
+
 import com.deimian86.verdurasdetemporada.BuildConfig;
 import com.deimian86.verdurasdetemporada.fragments.MariscosFragment;
 import com.deimian86.verdurasdetemporada.fragments.PescadosFragment;
@@ -13,11 +16,15 @@ import androidx.appcompat.widget.Toolbar;
 import com.deimian86.verdurasdetemporada.R;
 import com.deimian86.verdurasdetemporada.fragments.FrutasFragment;
 import com.deimian86.verdurasdetemporada.fragments.VerdurasFragment;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.crashes.Crashes;
 
 public class MainActivity extends AppCompatActivity {
+
+    private BottomSheetBehavior sheetBehavior;
+    private LinearLayout bottomSheet;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,10 +33,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         loadFragment(new VerdurasFragment());
-        init();
+        initNavigation();
+        initBottomDialog();
     }
 
-    public void init(){
+    public void initNavigation(){
         final BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -65,5 +73,36 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }
+
+    private void initBottomDialog(){
+        bottomSheet = findViewById(R.id.bottom_sheet);
+        sheetBehavior = BottomSheetBehavior.from(bottomSheet);
+        // callback for do something
+        sheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+            @Override
+            public void onStateChanged(@NonNull View view, int newState) {
+                switch (newState) {
+                    case BottomSheetBehavior.STATE_HIDDEN:
+                        break;
+                    case BottomSheetBehavior.STATE_EXPANDED:
+                        break;
+                    case BottomSheetBehavior.STATE_COLLAPSED:
+                        break;
+                    case BottomSheetBehavior.STATE_DRAGGING:
+                        break;
+                    case BottomSheetBehavior.STATE_SETTLING:
+                        break;
+                    case BottomSheetBehavior.STATE_HALF_EXPANDED:
+                        break;
+                }
+            }
+
+            @Override
+            public void onSlide(@NonNull View view, float v) { }
+        });
+
+    }
+
+
 
 }
