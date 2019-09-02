@@ -6,8 +6,8 @@ android {
         applicationId "com.deimian86.verdurasdetemporada"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 3
-        versionName "1.1"
+        versionCode 4
+        versionName "1.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -19,7 +19,7 @@ android {
             buildConfigField("String", "MS_APPCENTER_SECRET", "\"${System.env.MS_APPCENTER_SECRET}\"")
         }
     }
-    buildToolsVersion '29.0.0'
+    buildToolsVersion '29.0.2'
 }
 
 dependencies {
