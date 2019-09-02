@@ -1,5 +1,5 @@
 buildscript {
-    
+
     repositories {
         google()
         jcenter()
@@ -9,7 +9,12 @@ buildscript {
     }
 }
 
+plugins {
+    id "org.sonarqube" version "2.7.1"
+}
+
 allprojects {
+
     repositories {
         google()
         jcenter()
@@ -19,3 +24,5 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+
