@@ -17,6 +17,10 @@ import com.bumptech.glide.Glide;
 import com.deimian86.verdurasdetemporada.R;
 import com.deimian86.verdurasdetemporada.entities.mariscos.Marisco;
 import com.deimian86.verdurasdetemporada.utils.CustomYearView;
+import com.deimian86.verdurasdetemporada.utils.bus.MessageEventMarisco;
+import com.deimian86.verdurasdetemporada.utils.bus.MessageEventVerdura;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,7 +93,7 @@ public class MariscoAdapter extends RecyclerView.Adapter<MariscoAdapter.MariscoV
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, dataFiltered.get(position).getNombre(), Toast.LENGTH_SHORT).show();
+                EventBus.getDefault().post(new MessageEventMarisco(dataFiltered.get(position)));
             }
         });
 

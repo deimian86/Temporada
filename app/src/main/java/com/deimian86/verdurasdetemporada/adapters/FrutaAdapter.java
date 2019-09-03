@@ -16,6 +16,10 @@ import com.bumptech.glide.Glide;
 import com.deimian86.verdurasdetemporada.R;
 import com.deimian86.verdurasdetemporada.entities.frutas.Fruta;
 import com.deimian86.verdurasdetemporada.utils.CustomYearView;
+import com.deimian86.verdurasdetemporada.utils.bus.MessageEventFruta;
+import com.deimian86.verdurasdetemporada.utils.bus.MessageEventMarisco;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,7 +91,7 @@ public class FrutaAdapter extends RecyclerView.Adapter<FrutaAdapter.FrutaViewHol
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, dataFiltered.get(position).getNombre(), Toast.LENGTH_SHORT).show();
+                EventBus.getDefault().post(new MessageEventFruta(dataFiltered.get(position)));
             }
         });
 

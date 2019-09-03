@@ -15,12 +15,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import com.deimian86.verdurasdetemporada.R;
+import com.deimian86.verdurasdetemporada.activities.MainActivity;
 import com.deimian86.verdurasdetemporada.adapters.FrutaAdapter;
 import com.deimian86.verdurasdetemporada.entities.frutas.Fruta;
 import com.deimian86.verdurasdetemporada.entities.frutas.FrutaMes;
 import com.deimian86.verdurasdetemporada.utils.AppDatabase;
-import com.deimian86.verdurasdetemporada.utils.BusProvider;
-import com.squareup.otto.Subscribe;
+import com.deimian86.verdurasdetemporada.utils.RequestCodes;
+import com.deimian86.verdurasdetemporada.utils.bus.MessageEventFruta;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,8 +57,13 @@ public class FrutasFragment extends Fragment {
     }
 
     @Subscribe
-    public void dbReady(String created) {
-        loadFrutas();
+    public void getMessage(String message) {
+        if(message.equals(RequestCodes.DB_CREATED)) loadFrutas();
+    }
+
+    @Subscribe
+    public void getMessageObject(MessageEventFruta fruta) {
+        ((MainActivity)getActivity()).showDetailBottomDialog(fruta.getFruta());
     }
 
     private void loadFrutas(){
@@ -127,13 +137,13 @@ public class FrutasFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        BusProvider.getInstance().register(this);
+        EventBus.getDefault().register(this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        BusProvider.getInstance().unregister(this);
+        EventBus.getDefault().unregister(this);
     }
 
 }

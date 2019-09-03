@@ -17,12 +17,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.deimian86.verdurasdetemporada.R;
+import com.deimian86.verdurasdetemporada.activities.MainActivity;
 import com.deimian86.verdurasdetemporada.adapters.MariscoAdapter;
 import com.deimian86.verdurasdetemporada.entities.mariscos.Marisco;
 import com.deimian86.verdurasdetemporada.entities.mariscos.MariscoMes;
 import com.deimian86.verdurasdetemporada.utils.AppDatabase;
-import com.deimian86.verdurasdetemporada.utils.BusProvider;
-import com.squareup.otto.Subscribe;
+import com.deimian86.verdurasdetemporada.utils.RequestCodes;
+import com.deimian86.verdurasdetemporada.utils.bus.MessageEventFruta;
+import com.deimian86.verdurasdetemporada.utils.bus.MessageEventMarisco;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,8 +58,13 @@ public class MariscosFragment extends Fragment {
     }
 
     @Subscribe
-    public void dbReady(String created) {
-        loadMariscos();
+    public void getMessage(String message) {
+        if(message.equals(RequestCodes.DB_CREATED)) loadMariscos();
+    }
+
+    @Subscribe
+    public void getMessageObject(MessageEventMarisco marisco) {
+        ((MainActivity)getActivity()).showDetailBottomDialog(marisco.getMarisco());
     }
 
     private void loadMariscos(){
@@ -129,13 +139,13 @@ public class MariscosFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        BusProvider.getInstance().register(this);
+        EventBus.getDefault().register(this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        BusProvider.getInstance().unregister(this);
+        EventBus.getDefault().unregister(this);
     }
 
 }

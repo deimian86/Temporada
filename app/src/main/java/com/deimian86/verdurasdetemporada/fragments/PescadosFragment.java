@@ -15,12 +15,18 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.deimian86.verdurasdetemporada.R;
+import com.deimian86.verdurasdetemporada.activities.MainActivity;
 import com.deimian86.verdurasdetemporada.adapters.PescadoAdapter;
 import com.deimian86.verdurasdetemporada.entities.pescados.Pescado;
 import com.deimian86.verdurasdetemporada.entities.pescados.PescadoMes;
 import com.deimian86.verdurasdetemporada.utils.AppDatabase;
-import com.deimian86.verdurasdetemporada.utils.BusProvider;
-import com.squareup.otto.Subscribe;
+import com.deimian86.verdurasdetemporada.utils.RequestCodes;
+import com.deimian86.verdurasdetemporada.utils.bus.MessageEventFruta;
+import com.deimian86.verdurasdetemporada.utils.bus.MessageEventPescado;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,8 +56,13 @@ public class PescadosFragment extends Fragment {
     }
 
     @Subscribe
-    public void dbReady(String created) {
-        loadPescados();
+    public void getMessage(String message) {
+        if(message.equals(RequestCodes.DB_CREATED)) loadPescados();
+    }
+
+    @Subscribe
+    public void getMessageObject(MessageEventPescado pescado) {
+        ((MainActivity)getActivity()).showDetailBottomDialog(pescado.getPescado());
     }
 
     private void loadPescados(){
@@ -127,13 +138,13 @@ public class PescadosFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        BusProvider.getInstance().register(this);
+        EventBus.getDefault().register(this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        BusProvider.getInstance().unregister(this);
+        EventBus.getDefault().unregister(this);
     }
 
 }

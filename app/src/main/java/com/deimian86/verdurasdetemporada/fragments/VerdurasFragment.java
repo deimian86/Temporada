@@ -15,12 +15,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import com.deimian86.verdurasdetemporada.R;
+import com.deimian86.verdurasdetemporada.activities.MainActivity;
 import com.deimian86.verdurasdetemporada.adapters.VerduraAdapter;
 import com.deimian86.verdurasdetemporada.entities.verduras.Verdura;
 import com.deimian86.verdurasdetemporada.entities.verduras.VerduraMes;
 import com.deimian86.verdurasdetemporada.utils.AppDatabase;
-import com.deimian86.verdurasdetemporada.utils.BusProvider;
-import com.squareup.otto.Subscribe;
+import com.deimian86.verdurasdetemporada.utils.RequestCodes;
+import com.deimian86.verdurasdetemporada.utils.bus.MessageEventFruta;
+import com.deimian86.verdurasdetemporada.utils.bus.MessageEventVerdura;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,14 +52,18 @@ public class VerdurasFragment extends Fragment {
         adapter.setHasStableIds(true);
         rv.setAdapter(adapter);
         rv.setHasFixedSize(true);
-        // rv.setItemViewCacheSize(25);
         loadVerduras();
         return v;
     }
 
     @Subscribe
-    public void dbReady(String created) {
-        loadVerduras();
+    public void getMessage(String message) {
+        if(message.equals(RequestCodes.DB_CREATED)) loadVerduras();
+    }
+
+    @Subscribe
+    public void getMessageObject(MessageEventVerdura verdura) {
+        ((MainActivity)getActivity()).showDetailBottomDialog(verdura.getVerdura());
     }
 
     private void loadVerduras(){
@@ -129,13 +138,13 @@ public class VerdurasFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        BusProvider.getInstance().register(this);
+        EventBus.getDefault().register(this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        BusProvider.getInstance().unregister(this);
+        EventBus.getDefault().unregister(this);
     }
 
 }

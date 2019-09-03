@@ -7,11 +7,12 @@ import androidx.room.PrimaryKey;
 import androidx.room.Relation;
 import androidx.room.TypeConverters;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Verdura {
+public class Verdura implements Serializable {
 
     @PrimaryKey
     private int id;

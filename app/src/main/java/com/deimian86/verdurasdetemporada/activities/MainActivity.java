@@ -6,6 +6,11 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.deimian86.verdurasdetemporada.BuildConfig;
+import com.deimian86.verdurasdetemporada.dialogs.DialogDetailFood;
+import com.deimian86.verdurasdetemporada.entities.frutas.Fruta;
+import com.deimian86.verdurasdetemporada.entities.mariscos.Marisco;
+import com.deimian86.verdurasdetemporada.entities.pescados.Pescado;
+import com.deimian86.verdurasdetemporada.entities.verduras.Verdura;
 import com.deimian86.verdurasdetemporada.fragments.MariscosFragment;
 import com.deimian86.verdurasdetemporada.fragments.PescadosFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -34,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         loadFragment(new VerdurasFragment());
         initNavigation();
-        initBottomDialog();
     }
 
     public void initNavigation(){
@@ -74,35 +78,20 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    private void initBottomDialog(){
-        bottomSheet = findViewById(R.id.bottom_sheet);
-        sheetBehavior = BottomSheetBehavior.from(bottomSheet);
-        // callback for do something
-        sheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
-            @Override
-            public void onStateChanged(@NonNull View view, int newState) {
-                switch (newState) {
-                    case BottomSheetBehavior.STATE_HIDDEN:
-                        break;
-                    case BottomSheetBehavior.STATE_EXPANDED:
-                        break;
-                    case BottomSheetBehavior.STATE_COLLAPSED:
-                        break;
-                    case BottomSheetBehavior.STATE_DRAGGING:
-                        break;
-                    case BottomSheetBehavior.STATE_SETTLING:
-                        break;
-                    case BottomSheetBehavior.STATE_HALF_EXPANDED:
-                        break;
-                }
-            }
-
-            @Override
-            public void onSlide(@NonNull View view, float v) { }
-        });
-
+    public void showDetailBottomDialog(Object food) {
+        DialogDetailFood bottomSheet = null;
+        if(food instanceof Fruta) {
+            bottomSheet = DialogDetailFood.newInstance((Fruta) food);
+        } else if(food instanceof Verdura) {
+            bottomSheet = DialogDetailFood.newInstance((Verdura) food);
+        } else if(food instanceof Pescado) {
+            bottomSheet = DialogDetailFood.newInstance((Pescado) food);
+        } else if(food instanceof Marisco) {
+            bottomSheet = DialogDetailFood.newInstance((Marisco) food);
+        }
+        if(bottomSheet != null) {
+            bottomSheet.show(getSupportFragmentManager(), bottomSheet.getTag());
+        }
     }
-
-
 
 }

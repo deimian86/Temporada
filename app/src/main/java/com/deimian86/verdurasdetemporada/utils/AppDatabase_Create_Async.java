@@ -16,6 +16,8 @@ import com.deimian86.verdurasdetemporada.entities.verduras.VerduraMes;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -146,6 +148,6 @@ public class AppDatabase_Create_Async extends AsyncTask<Void, Boolean, Boolean> 
     @Override
     protected void onPostExecute(Boolean aBoolean) {
         super.onPostExecute(aBoolean);
-        BusProvider.getInstance().post("ASYNCED");
+        EventBus.getDefault().post(RequestCodes.DB_CREATED);
     }
 }

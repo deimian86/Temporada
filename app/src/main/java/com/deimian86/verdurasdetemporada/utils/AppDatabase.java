@@ -24,6 +24,8 @@ import com.deimian86.verdurasdetemporada.entities.verduras.VerduraDao;
 import com.deimian86.verdurasdetemporada.entities.verduras.VerduraMes;
 import com.deimian86.verdurasdetemporada.entities.verduras.VerduraMesDao;
 
+import org.greenrobot.eventbus.EventBus;
+
 @Database(entities = {Verdura.class, VerduraMes.class, Fruta.class, FrutaMes.class, Pescado.class, PescadoMes.class, Marisco.class, MariscoMes.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
@@ -62,7 +64,7 @@ public abstract class AppDatabase extends RoomDatabase {
             @Override
             public void onOpen(@NonNull SupportSQLiteDatabase db) {
                 super.onOpen(db);
-                BusProvider.getInstance().post("ONOPEN");
+                EventBus.getDefault().post(RequestCodes.DB_OPENED);
             }
         };
     }

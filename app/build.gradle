@@ -1,27 +1,37 @@
 apply plugin: 'com.android.application'
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    // Google Libraries
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // Parseo de JSON
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    // Test unitarios y automaticos
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Room Database
     implementation 'androidx.room:room-runtime:2.1.0'
     annotationProcessor 'androidx.room:room-compiler:2.1.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
-    implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.google.code.gson:gson:2.8.5'
 
     // Glide - Carga de imagenes asincronas
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
+    // Apache commons
     implementation 'org.apache.commons:commons-lang3:3.6'
-    implementation 'com.squareup:otto:1.3.8'
 
-    // Microsoft appcenter
+    // Bus
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
+    // Microsoft AppCenter
     def appCenterSdkVersion = '2.3.0'
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
