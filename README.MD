@@ -1,6 +1,6 @@
-Verduras de Temporada
+Temporada
 =======
-Application created as a playground to try different concepts. It's also a calendar of seasonal fruits and vegetables.
+Application created as a playground to try different concepts. It's also a calendar of seasonal fruits, vegetables, fish and seafood.
 
 [![Build status](https://build.appcenter.ms/v0.1/apps/03f2e05d-e0b9-47f8-b75a-e3aaa26db152/branches/master/badge)](https://appcenter.ms)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=deimian86_VerdurasDeTemporada&metric=alert_status)](https://sonarcloud.io/dashboard?id=deimian86_VerdurasDeTemporada)
