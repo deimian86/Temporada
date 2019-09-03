@@ -2,9 +2,7 @@ package com.deimian86.verdurasdetemporada.activities;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.LinearLayout;
-
 import com.deimian86.verdurasdetemporada.BuildConfig;
 import com.deimian86.verdurasdetemporada.dialogs.DialogDetailFood;
 import com.deimian86.verdurasdetemporada.entities.frutas.Fruta;

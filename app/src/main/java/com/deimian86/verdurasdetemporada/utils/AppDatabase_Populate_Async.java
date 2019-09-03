@@ -27,13 +27,13 @@ import java.io.Writer;
 import java.lang.reflect.Type;
 import java.util.List;
 
-public class AppDatabase_Create_Async extends AsyncTask<Void, Boolean, Boolean> {
+public class AppDatabase_Populate_Async extends AsyncTask<Void, Boolean, Boolean> {
 
     private String tag = this.getClass().getName();
     private AppDatabase db;
     private Context context;
 
-    public AppDatabase_Create_Async(AppDatabase db, Context context) {
+    public AppDatabase_Populate_Async(AppDatabase db, Context context) {
         this.db = db;
         this.context = context;
     }

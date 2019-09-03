@@ -26,7 +26,7 @@ import com.deimian86.verdurasdetemporada.entities.verduras.VerduraMesDao;
 
 import org.greenrobot.eventbus.EventBus;
 
-@Database(entities = {Verdura.class, VerduraMes.class, Fruta.class, FrutaMes.class, Pescado.class, PescadoMes.class, Marisco.class, MariscoMes.class}, version = 2, exportSchema = false)
+@Database(entities = {Verdura.class, VerduraMes.class, Fruta.class, FrutaMes.class, Pescado.class, PescadoMes.class, Marisco.class, MariscoMes.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract VerduraDao verduraDao();
@@ -45,7 +45,7 @@ public abstract class AppDatabase extends RoomDatabase {
             synchronized (AppDatabase.class) {
                 if (INSTANCE == null) {
                     RoomDatabase.Callback rdc = getCallBackInstance(context);
-                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class,"de-temporada-db").addCallback(rdc).build();
+                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class,"temporada-db.sqlite").addCallback(rdc).build();
                 }
             }
         }
@@ -56,9 +56,7 @@ public abstract class AppDatabase extends RoomDatabase {
     private static RoomDatabase.Callback getCallBackInstance(final Context context) {
         return new RoomDatabase.Callback(){
             public void onCreate (@NonNull SupportSQLiteDatabase database){
-                // Llenamos la base de datos solo tras crearla
-                AppDatabase_Create_Async createDb = new AppDatabase_Create_Async(INSTANCE, context);
-                createDb.execute();
+                populateDB(context);
             }
 
             @Override
@@ -67,6 +65,11 @@ public abstract class AppDatabase extends RoomDatabase {
                 EventBus.getDefault().post(RequestCodes.DB_OPENED);
             }
         };
+    }
+
+    private static void populateDB(final Context context) {
+        AppDatabase_Populate_Async createDb = new AppDatabase_Populate_Async(INSTANCE, context);
+        createDb.execute();
     }
 
 }

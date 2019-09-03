@@ -9,25 +9,18 @@ import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
 import com.deimian86.verdurasdetemporada.R;
 import com.deimian86.verdurasdetemporada.entities.pescados.Pescado;
 import com.deimian86.verdurasdetemporada.utils.CustomYearView;
 import com.deimian86.verdurasdetemporada.utils.bus.MessageEventPescado;
-import com.deimian86.verdurasdetemporada.utils.bus.MessageEventVerdura;
-
 import org.greenrobot.eventbus.EventBus;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class PescadoAdapter extends RecyclerView.Adapter<PescadoAdapter.PescadoViewHolder> implements Filterable {
 
-    private String tag = this.getClass().getName();
     private List<Pescado> data;
     private List<Pescado> dataFiltered;
     private Context context;

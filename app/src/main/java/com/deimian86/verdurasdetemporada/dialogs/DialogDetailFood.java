@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
 import androidx.annotation.Nullable;
 
 import com.deimian86.verdurasdetemporada.R;
@@ -14,6 +16,9 @@ import com.deimian86.verdurasdetemporada.entities.verduras.Verdura;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 public class DialogDetailFood extends BottomSheetDialogFragment {
+
+    private String titulo = "";
+    private String descripcion = "";
 
     public static DialogDetailFood newInstance(Verdura verdura) {
         DialogDetailFood f = new DialogDetailFood();
@@ -50,11 +55,35 @@ public class DialogDetailFood extends BottomSheetDialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(getArguments().getSerializable("verdura") != null) {
+            Verdura food = (Verdura) getArguments().getSerializable("verdura");
+            titulo = food.getNombre();
+            descripcion = food.getDescripcion();
+        } else if(getArguments().getSerializable("pescado") != null) {
+            Pescado food = (Pescado) getArguments().getSerializable("pescado");
+            titulo = food.getNombre();
+            descripcion = food.getDescripcion();
+        } else if(getArguments().getSerializable("marisco") != null) {
+            Marisco food = (Marisco) getArguments().getSerializable("marisco");
+            titulo = food.getNombre();
+            descripcion = food.getDescripcion();
+        } else if(getArguments().getSerializable("fruta") != null) {
+            Fruta food = (Fruta) getArguments().getSerializable("fruta");
+            titulo = food.getNombre();
+            descripcion = food.getDescripcion();
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.bottom_sheet_dialog, container, false);
+
+        TextView txtTitulo = view.findViewById(R.id.txtTitulo);
+        txtTitulo.setText(titulo);
+
+        TextView txtDescripcion = view.findViewById(R.id.txtDescripcion);
+        txtDescripcion.setText(descripcion);
+
         return view;
     }
 

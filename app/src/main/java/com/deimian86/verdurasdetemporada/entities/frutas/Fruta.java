@@ -24,6 +24,9 @@ public class Fruta implements Serializable {
     @ColumnInfo(name = "fondo")
     private String fondo;
 
+    @ColumnInfo(name = "descripcion")
+    private String descripcion;
+
     @Ignore
     private List<Integer> meses = new ArrayList<>();
 
@@ -69,6 +72,10 @@ public class Fruta implements Serializable {
     public List<Integer> getMesesMenos() { return meses_menos; }
 
     public void setMesesMenos(List<Integer> meses_menos) { this.meses_menos = meses_menos; }
+
+    public String getDescripcion() { return descripcion; }
+
+    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
 
     @Override
     public String toString() {

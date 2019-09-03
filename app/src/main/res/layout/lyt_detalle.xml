@@ -44,7 +44,7 @@
                     android:shadowDx="2"
                     android:shadowDy="2"
                     android:shadowRadius="6"
-                    android:text="@string/txt_prueba_verdura"
+                    android:text="@string/txt_prueba"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
                     android:textSize="60sp"

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Temporada</string>
     <string name="txt_prueba_abreviatura">PRB</string>
-    <string name="txt_prueba_verdura">Verdura</string>
+    <string name="txt_prueba">Lorem Ipsum dolor sit amet</string>
     <string name="txt_buscar">Buscar</string>
 
     <string name="tab_verduras">Verduras</string>
