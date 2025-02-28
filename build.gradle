@@ -10,12 +10,12 @@ buildscript {
 }
 
 plugins {
-    id "org.sonarqube" version "3.1.1"
+    id "org.sonarqube" version "6.0.1.5171"
 }
 
-sonarqube {
+sonar {
     properties {
-        property "sonar.projectKey", "deimian86_VerdurasDeTemporada"
+        property "sonar.projectKey", "deimian86_Temporada"
         property "sonar.organization", "deimian86"
         property "sonar.host.url", "https://sonarcloud.io"
     }
